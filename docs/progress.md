@@ -64,10 +64,11 @@
 - フックがブロックした記録は監査ログには残していない（Claude Code の画面上に理由が表示される）。
 
 ### オーナーに確認してほしいこと
-- [ ] 自分のターミナルで `approve` が対話確認つきで動くこと（Claude Code からは規則上実行できないため、承認成功の経路はオーナーの手元でのみ確認可能。自動テストではアプリ層の承認処理を検証済み）
-  - 手順: `npm run demo:setup` で一時フォルダに練習用データ（承認待ちの記事 demo-001）を作り、表示されたコマンドを順に実行する。本物の data/ は変更されない
-  - 2026-10-23 オーナーの Windows（PowerShell, Node v24.19.0）で demo:setup は成功。approve は人間の端末チェックを通過したが、`$env:NGT_ROOT` 未設定のため「記事が見つかりません」で停止 → 続きを実施中
-  - 改善済み: demo:setup の案内を OS 別・番号付きに変更、「見つかりません」エラーに探した場所を表示
+- [x] 自分のターミナルで `approve` が対話確認つきで動くこと（2026-10-23 完了）
+  - 環境: オーナーの Windows / PowerShell / Node v24.19.0 / Git 2.55.0、`npm run demo:setup` の練習用データで実施
+  - 結果: approve（記事ID再入力）→ publish:record（yes 入力）→ article:status で published・時刻は +09:00 → data:check 問題なし
+  - 途中で `$env:NGT_ROOT` の設定を飛ばして「記事が見つかりません」になった → demo:setup の案内を OS 別・番号付きに改善、エラーに探した場所を表示
+  - 参考: npm install 時の `npm warn allow-scripts ... esbuild` は新しい npm の警告。tsx は正常に動作しているため対応不要
 
 ### AI 側（フェーズ2の残り）
 - [ ] 手順10: GitHub Actions（CI）— push 時に `npm ci && npm run check`
