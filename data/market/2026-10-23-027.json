@@ -1,0 +1,19 @@
+{
+  "id": "2026-10-23-027",
+  "topic": "テーマ候補: 将棋 / 四間飛車対策（照合）",
+  "source_url": "https://note.com/furuta_ryusei/n/n74f5b23ce623",
+  "source_title": "【ノーマル四間飛車破りのドル箱戦法】古田流銀冠穴熊の全て（棋譜データファイル付き）",
+  "retrieved_at": "2026-10-23T14:48:00+09:00",
+  "method": "web_fetch",
+  "measurement": "observed",
+  "metrics": {
+    "genre": "shogi",
+    "price_jpy": 5000,
+    "likes": 16,
+    "published_on": "2025-06-26",
+    "is_paid": "true"
+  },
+  "estimation_basis": null,
+  "notes": "進行役が 2026-10-23-015（検索抜粋による記録）を照合するため記事ページを直接取得（取得は 14:47〜14:48 JST）。価格はページ内データの price、スキ数は likeCount、公開日は publishAt の日付部分。価格は 2026-10-23-015 と一致。likeCount はページ内で最初に現れた値で、記事本体のものと判断。",
+  "collected_by": "orchestrator"
+}

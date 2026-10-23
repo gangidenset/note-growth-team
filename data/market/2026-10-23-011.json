@@ -1,0 +1,17 @@
+{
+  "id": "2026-10-23-011",
+  "topic": "テーマ候補: スマホアプリ開発 / Flutter（Windows）環境構築〜公開申請までの実践マニュアル",
+  "source_url": "https://note.com/office_t/m/m56cff5e253bc/hashtag/Flutter%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB",
+  "source_title": "実践 Flutter / Androidアプリ開発マニュアル｜OFFICE+T｜note",
+  "retrieved_at": "2026-10-23T14:43:00+09:00",
+  "method": "web_search",
+  "measurement": "observed",
+  "metrics": {
+    "genre": "app_dev",
+    "is_paid": "true",
+    "price_jpy": 350
+  },
+  "estimation_basis": null,
+  "notes": "WebFetch は DNS エラーで失敗。本文は未取得・検索抜粋による。抜粋ではページに ¥350 の表示があるとされ、Windows 環境での Flutter/Android 開発の環境構築のつまずきどころ等を扱うと説明されていた。¥350 が単体記事価格かマガジン価格かは抜粋からは判別できない。同じ検索ではリリース手順系の記事（Google Play 公開手順など）は無料記事が多数見つかった（有料と確認できたのはこの1件のみ）。スキ数・公開日・フォロワー数は不明。時刻は進行役が伝えた開始時刻（2026-10-23T14:38+09:00）からの概算。 【取得日時の修正】調査担当は経過時間を見積もって最大14:55と記録していたが、実際の作業は 2026-10-23 14:38〜14:43（JST）頃に終わっており未来の時刻になっていた。進行役が上限の 14:43 に修正。",
+  "collected_by": "market-researcher"
+}

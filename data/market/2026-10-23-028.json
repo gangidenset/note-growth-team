@@ -1,0 +1,20 @@
+{
+  "id": "2026-10-23-028",
+  "topic": "テーマ候補: デモアプリ作成 / 非エンジニア向け Claude Code 入門（照合）",
+  "source_url": "https://note.com/l_mrk/n/n435e046b6a67",
+  "source_title": "ClaudeCodeのマジで世界一やさしい教科書【非エンジニア向け】｜AI駆動塾",
+  "retrieved_at": "2026-10-23T14:48:00+09:00",
+  "method": "web_fetch",
+  "measurement": "observed",
+  "metrics": {
+    "genre": "demo_app",
+    "price_jpy": 2980,
+    "likes": 592,
+    "published_on": "2026-02-20",
+    "is_paid": "true",
+    "author_membership_price_jpy_per_month_shown": 4980
+  },
+  "estimation_basis": null,
+  "notes": "進行役が 2026-10-23-012（検索抜粋による記録）を照合するため記事ページを直接取得（取得は 14:47〜14:48 JST）。価格はページ内データの price、スキ数は likeCount、公開日は publishAt の日付部分。価格は 2026-10-23-012 と一致。likeCount はページ内で最初に現れた値で、記事本体のものと判断。",
+  "collected_by": "orchestrator"
+}

@@ -187,8 +187,8 @@ describe("ApprovalRecord（承認記録）", () => {
     expect(ApprovalRecord.safeParse(approval).success).toBe(true);
   });
 
-  it("AI社員名を承認者にできない", () => {
-    expect(ApprovalRecord.safeParse({ ...approval, approver: "quality-analyst" }).success).toBe(false);
+  it.each(["quality-analyst", "orchestrator"])("AI（%s）を承認者にできない", (approver) => {
+    expect(ApprovalRecord.safeParse({ ...approval, approver }).success).toBe(false);
   });
 
   it("ハッシュ形式が不正なら拒否する", () => {

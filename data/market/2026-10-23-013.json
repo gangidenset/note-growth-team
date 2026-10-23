@@ -1,0 +1,18 @@
+{
+  "id": "2026-10-23-013",
+  "topic": "テーマ候補: デモアプリ作成 / 非エンジニアが Claude Code で成果物を作る全工程（制作ログ型）",
+  "source_url": "https://note.com/sensei_playflow/n/na5d80efce367",
+  "source_title": "非エンジニアがClaude Codeでnote記事を作るまでの全工程｜プレフロsensei",
+  "retrieved_at": "2026-10-23T14:43:00+09:00",
+  "method": "web_search",
+  "measurement": "observed",
+  "metrics": {
+    "genre": "demo_app",
+    "is_paid": "true",
+    "price_jpy": 300,
+    "author_membership_price_jpy_per_month_from": 680
+  },
+  "estimation_basis": null,
+  "notes": "WebFetch は DNS エラーで失敗。本文は未取得・検索抜粋による。抜粋では『この記事のみ ¥300』『メンバーシップ ¥680/月〜』と表示されていた。テーマはアプリそのものではなく『Claude Code で制作した過程』であり、business-plan.md §4 の追加案（開発過程を記事化）と近い。スキ数・公開日・フォロワー数は不明。時刻は進行役が伝えた開始時刻（2026-10-23T14:38+09:00）からの概算。 【取得日時の修正】調査担当は経過時間を見積もって最大14:55と記録していたが、実際の作業は 2026-10-23 14:38〜14:43（JST）頃に終わっており未来の時刻になっていた。進行役が上限の 14:43 に修正。",
+  "collected_by": "market-researcher"
+}

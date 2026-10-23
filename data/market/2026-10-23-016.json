@@ -1,0 +1,19 @@
+{
+  "id": "2026-10-23-016",
+  "topic": "テーマ候補: 将棋 / 特定の奇襲・新戦法への対策（単発・低価格）",
+  "source_url": "https://note.com/furuta_ryusei/n/n37b9e8608448",
+  "source_title": "魔界四間飛車にはどう対応すれば良いのか？｜古田龍生",
+  "retrieved_at": "2026-10-23T14:43:00+09:00",
+  "method": "web_search",
+  "measurement": "observed",
+  "metrics": {
+    "genre": "shogi",
+    "is_paid": "true",
+    "price_jpy": 300,
+    "author_membership_price_jpy_per_month_basic": 1000,
+    "author_membership_price_jpy_per_month_upper": 1500
+  },
+  "estimation_basis": null,
+  "notes": "WebFetch は DNS エラーで失敗。本文は未取得・検索抜粋による。抜粋では『この記事のみ ¥300』。同著者のメンバーシップは月額 ¥1,000 コース（過去の有料記事200本以上が読み放題との表示）と ¥1,500/月コース（指導対局割引付き）が抜粋に出ていた。同著者の三段リーグ振り返り記事に ¥100 程度のものがあるとの抜粋もあったが、どの記事かは特定できていない。スキ数・公開日・フォロワー数は不明。時刻は進行役が伝えた開始時刻（2026-10-23T14:38+09:00）からの概算。 【取得日時の修正】調査担当は経過時間を見積もって最大14:55と記録していたが、実際の作業は 2026-10-23 14:38〜14:43（JST）頃に終わっており未来の時刻になっていた。進行役が上限の 14:43 に修正。",
+  "collected_by": "market-researcher"
+}

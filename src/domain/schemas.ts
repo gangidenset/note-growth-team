@@ -19,8 +19,8 @@ export const AGENT_NAMES = [
   "quality-analyst",
 ] as const;
 
-/** 記録者: AI社員 または オーナー */
-export const Collector = z.enum([...AGENT_NAMES, "owner"]);
+/** 記録者: AI社員、進行役（メインセッション。照合時の記録など）、またはオーナー */
+export const Collector = z.enum([...AGENT_NAMES, "orchestrator", "owner"]);
 
 // ---------- 市場データ ----------
 
@@ -228,7 +228,7 @@ export const ApprovalRecord = z.object({
   approver: z
     .string()
     .min(1)
-    .refine((n) => !(AGENT_NAMES as readonly string[]).includes(n), {
+    .refine((n) => !([...AGENT_NAMES, "orchestrator"] as readonly string[]).includes(n), {
       message: "AI社員は承認者になれません",
     }),
   approved_at: zonedDateTime,
