@@ -7,3 +7,5 @@
 {"at":"2026-10-23T15:37:16+09:00","actor":"ai","action":"transition","article_id":"ai-team-buildlog-01","from":"needs_revision","to":"drafting","reason":"qa 指摘の修正"}
 {"at":"2026-10-23T15:38:58+09:00","actor":"ai","action":"transition","article_id":"ai-team-buildlog-01","from":"drafting","to":"qa","reason":"qa 指摘の修正完了、再チェック"}
 {"at":"2026-10-23T15:40:56+09:00","actor":"ai","action":"transition","article_id":"ai-team-buildlog-01","from":"qa","to":"awaiting_approval","reason":"再チェック ready_for_approval（F1〜F11 pass）"}
+{"at":"2026-10-23T21:28:48+09:00","actor":"ai","action":"transition","article_id":"ai-team-buildlog-01","from":"awaiting_approval","to":"needs_revision","reason":"オーナー依頼: 口調をくだけた文体（B案、です・ます無し）に変更し、出典を末尾の「根拠」節にまとめる"}
+{"at":"2026-10-23T21:28:48+09:00","actor":"ai","action":"transition","article_id":"ai-team-buildlog-01","from":"needs_revision","to":"drafting","reason":"口調変更と根拠節の作成"}

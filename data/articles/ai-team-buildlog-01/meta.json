@@ -1,12 +1,12 @@
 {
   "id": "ai-team-buildlog-01",
   "theme_id": "claude-code-ai-team-buildlog",
-  "status": "awaiting_approval",
+  "status": "drafting",
   "title": "Claude Code の AI社員に「承認・公開」をさせない設計図: CLAUDE.md・settings.json・PreToolUse フックの実例と6つの失敗の直し方",
   "price_jpy": 980,
   "published_url": null,
   "created_at": "2026-10-23T15:07:24+09:00",
-  "updated_at": "2026-10-23T15:40:56+09:00",
+  "updated_at": "2026-10-23T21:28:48+09:00",
   "history": [
     {
       "from": "idea",
@@ -63,6 +63,20 @@
       "at": "2026-10-23T15:40:56+09:00",
       "by": "ai",
       "reason": "再チェック ready_for_approval（F1〜F11 pass）"
+    },
+    {
+      "from": "awaiting_approval",
+      "to": "needs_revision",
+      "at": "2026-10-23T21:28:48+09:00",
+      "by": "ai",
+      "reason": "オーナー依頼: 口調をくだけた文体（B案、です・ます無し）に変更し、出典を末尾の「根拠」節にまとめる"
+    },
+    {
+      "from": "needs_revision",
+      "to": "drafting",
+      "at": "2026-10-23T21:28:48+09:00",
+      "by": "ai",
+      "reason": "口調変更と根拠節の作成"
     }
   ]
 }
