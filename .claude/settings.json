@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)",
+      "Edit(./.env)",
+      "Edit(./.env.*)",
+      "Edit(./data/approvals/**)",
+      "Write(./data/approvals/**)",
+      "Bash(npm run approve:*)",
+      "Bash(npm run publish:record:*)",
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(npm publish:*)"
+    ],
+    "ask": [
+      "Bash(rm:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(git clean:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(npm install:*)"
+    ]
+  }
+}
