@@ -11,7 +11,14 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "check": "npm run typecheck && npm run test"
+    "check": "npm run typecheck && npm run test",
+    "article:new": "tsx src/cli/index.ts article:new",
+    "article:transition": "tsx src/cli/index.ts article:transition",
+    "article:status": "tsx src/cli/index.ts article:status",
+    "article:archive": "tsx src/cli/index.ts article:archive",
+    "market:validate": "tsx src/cli/index.ts market:validate",
+    "approve": "tsx src/cli/index.ts approve",
+    "publish:record": "tsx src/cli/index.ts publish:record"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",

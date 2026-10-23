@@ -27,6 +27,7 @@
       "Write(./data/approvals/**)",
       "Bash(npm run approve:*)",
       "Bash(npm run publish:record:*)",
+      "Bash(npm run article:archive:*)",
       "Bash(git push --force:*)",
       "Bash(git push -f:*)",
       "Bash(npm publish:*)"

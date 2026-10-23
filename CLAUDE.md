@@ -31,12 +31,16 @@
 - `src/`, `tests/` フェーズ2で作成する CLI とテスト
 
 ## コマンド
-- `npm run check` — 型チェック・テスト（実装済み）。秘密情報スキャン・データ整合性はフェーズ2後半で追加
+- `npm run check` — 型チェック・テスト（秘密情報スキャン・データ整合性はフェーズ2後半で追加）
 - `npm test` — テストのみ
-
-以下はフェーズ2後半で実装予定:
 - `npm run market:validate` — 市場データの出典項目検証
 - `npm run article:status` — 記事の状態一覧
+- `npm run article:new -- <記事ID> [--theme <テーマID>] [--title <タイトル>] [--price <円>]`
+- `npm run article:transition -- <記事ID> <遷移先> [--reason <理由>]` — 状態は必ずこのコマンドで変える（meta.json の status を直接編集しない）
+
+オーナー専用（Claude Code は実行しない）: `npm run approve` / `npm run publish:record` / `npm run article:archive`
+
+動作確認やテストでは `NGT_ROOT=<一時ディレクトリ>` を指定し、本物の `data/` を変更しない。
 
 ## 文章スタイル
 - ドキュメント・記事は日本語。オーナーは Claude Code 初心者なので、手順は具体的なコマンド付きで説明する。

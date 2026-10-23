@@ -17,7 +17,7 @@ idea → researching → planning → drafting → qa → awaiting_approval → 
 
 ## AI がしてはいけないこと
 - `approved` / `published` / `archived` への遷移
-- `npm run approve`、`npm run publish:record` の実行
+- `npm run approve`、`npm run publish:record`、`npm run article:archive` の実行（書き方を変えた実行も含む）
 - `data/approvals/` の作成・編集、`meta.json` の status 直接書き換え
 - note への投稿、投稿のための外部送信
 
