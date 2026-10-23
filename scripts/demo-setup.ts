@@ -74,14 +74,17 @@ if (process.argv[1]?.endsWith("demo-setup.ts")) {
   const root = mkdtempSync(join(tmpdir(), "ngt-demo-"));
   setupDemo(root);
   const id = DEMO_ARTICLE_ID;
+  const setRoot =
+    process.platform === "win32" ? `$env:NGT_ROOT="${root}"` : `export NGT_ROOT="${root}"`;
   console.log(`練習用データを作りました: ${root}`);
   console.log(`記事 ${id} は「承認待ち（awaiting_approval）」です。本物の data/ は変更していません。\n`);
-  console.log("▼ Mac / Linux（ターミナル）で次を1行ずつ実行:");
-  console.log(`export NGT_ROOT="${root}"`);
-  console.log(`npm run approve -- ${id}`);
-  console.log(`npm run publish:record -- ${id} https://note.com/demo/n/n0000000000`);
-  console.log("npm run article:status");
-  console.log("npm run data:check\n");
-  console.log("▼ Windows（PowerShell）の場合は1行目だけ次に変える:");
-  console.log(`$env:NGT_ROOT="${root}"`);
+  console.log("次のコマンドを、上から1行ずつ実行してください（1行目を飛ばすと本物の data/ を見てしまいます）:\n");
+  console.log(`  1. ${setRoot}`);
+  console.log(`  2. npm run approve -- ${id}        （記事IDの入力を求められたら ${id} と入力）`);
+  console.log(`  3. npm run publish:record -- ${id} https://note.com/demo/n/n0000000000   （yes と入力）`);
+  console.log("  4. npm run article:status");
+  console.log("  5. npm run data:check");
+  if (process.platform === "win32") {
+    console.log("\n（Mac / Linux の場合、1. は export NGT_ROOT=\"...\" の形になります）");
+  }
 }

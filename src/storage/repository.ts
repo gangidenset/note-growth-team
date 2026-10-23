@@ -124,7 +124,9 @@ export class Repository {
 
   readMeta(id: string): ArticleMeta {
     const meta = this.readJson(join(this.articleDir(id), "meta.json"), ArticleMeta, "meta.json");
-    if (!meta) throw new DomainError([`記事 "${id}" が見つかりません`]);
+    if (!meta) {
+      throw new DomainError([`記事 "${id}" が見つかりません（探した場所: ${join(this.root, "data", "articles")}）`]);
+    }
     if (meta.id !== id) {
       throw new DomainError([`meta.json の id（${meta.id}）がディレクトリ名（${id}）と一致しません`]);
     }
