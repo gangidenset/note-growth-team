@@ -1,12 +1,12 @@
 {
   "id": "ai-team-buildlog-01",
   "theme_id": "claude-code-ai-team-buildlog",
-  "status": "approved",
+  "status": "awaiting_approval",
   "title": "Claude Code の AI社員に「承認・公開」をさせない設計図: CLAUDE.md・settings.json・PreToolUse フックの実例と6つの失敗の直し方",
   "price_jpy": 980,
   "published_url": null,
   "created_at": "2026-10-23T15:07:24+09:00",
-  "updated_at": "2026-10-23T22:05:24+09:00",
+  "updated_at": "2026-10-23T22:15:34+09:00",
   "history": [
     {
       "from": "idea",
@@ -119,6 +119,13 @@
       "at": "2026-10-23T22:05:24+09:00",
       "by": "owner",
       "reason": ""
+    },
+    {
+      "from": "approved",
+      "to": "awaiting_approval",
+      "at": "2026-10-23T22:15:34+09:00",
+      "by": "ai",
+      "reason": "note 投稿時に「2. の」等の章参照が番号付きリストとして「1.」に振り直され意味が変わるため、paid.md 手順1・3・5・6・7 の参照を「N章の」に変更。承認後の本文変更のため承認を取り消し再承認待ち"
     }
   ]
 }
