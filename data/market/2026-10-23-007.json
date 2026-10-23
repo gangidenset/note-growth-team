@@ -1,0 +1,17 @@
+{
+  "id": "2026-10-23-007",
+  "topic": "noteプラットフォーム仕様: 公式API（ヘルプの案内）",
+  "source_url": "https://www.help-note.com/hc/ja/articles/63304278903321",
+  "source_title": "外部サービスと連携して noteの記事を作成する（note API）（note ヘルプセンター）",
+  "retrieved_at": "2026-10-23T13:58:00+09:00",
+  "method": "web_search",
+  "measurement": "observed",
+  "metrics": {
+    "api_status": "note_pro_feature_only",
+    "api_supported_services": "ヘルプ記載の対応サービスに限る（2026年10月時点で StoryHubスタジオ）",
+    "api_scope_note": "下書き保存まで。見出し画像の設定・公開は不可（検索抜粋による）"
+  },
+  "estimation_basis": null,
+  "notes": "ページ冒頭に『※本機能はnote proの機能です』との表示（検索結果のタイトル抜粋）。WebFetch がDNSエラーで失敗したため直接取得できておらず、値は WebSearch 検索結果の抜粋による。関連する公式ヘルプ『noteが公式で公開しているAPIはありますか？』https://www.help-note.com/hc/ja/articles/46643492548121 の存在も検索で確認したが、本文の記載内容は検索結果から読めなかった（個人記事では『現時点で公式に公開されたAPIはなく、今後の予定も未定』と紹介されているが、公式本文は未確認のため記録しない）。一般向け開発者ドキュメントは見つからなかった。確認に使った検索語: 『note 公式 API 提供 開発者 help-note.com』『note API 公開 提供していません』『help-note.com APIの提供 予定』『note API 発表 note pro 2026年10月 note株式会社』。retrieved_at の時刻部分は 00:00 を仮置き。 【取得日時について】調査担当が現在時刻を取得できず 00:00 を仮置きしていたため、進行役が修正。検索はエージェント実行中の 2026-10-23 13:54〜13:58（JST）頃に行われた（実行開始・終了時刻からの推定）。retrieved_at はその上限の 13:58。",
+  "collected_by": "market-researcher"
+}

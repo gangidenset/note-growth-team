@@ -1,7 +1,7 @@
 # 進捗と残課題
 
 - 最終更新: 2026-10-23（JST）
-- 現在のフェーズ: **フェーズ2 完了（CI 3環境すべて成功）→ 次はフェーズ3**
+- 現在のフェーズ: **フェーズ3 進行中（手数料・公式APIの確認 完了、次はテーマ候補調査）**
 - 作業ブランチ: `claude/upbeat-cerf-5k2jv2`
 
 ## 環境確認結果（2026-10-23、クラウド実行環境）
@@ -85,15 +85,28 @@
 - CLI は TZ 未指定なら Asia/Tokyo で日時を記録する。テストや動作確認では `NGT_ROOT=<一時ディレクトリ>` で本物の data/ を汚さない。
 
 ## フェーズ3（進行中）
-- [ ] note の手数料・公式APIの有無を公式情報で確認（market-researcher に委任中、2026-10-23 開始）
-  - `data/market/2026-10-23-001〜003.json` は調査途中で保存されたもの。スキーマ検証は通過済みだが、**進行役による公式ページとの照合は未実施**。照合が終わるまで business-plan 等には反映しない
-- [ ] 照合後、business-plan.md §2・§3（手数料と手取り）、tech-decisions.md ADR-006 と requirements.md §6（公式API）を更新
+- [x] note の手数料・公式APIの有無を公式情報で確認（2026-10-23、market-researcher に委任 → 進行役が照合）
+  - 市場データ `data/market/2026-10-23-001〜009.json`（手数料・振込・価格範囲・プレミアム・メンバーシップ・note API×2・ガイドライン・規約改定）
+  - 結論: 手数料は 事務手数料（購入者の決済方法で 5〜15%）+ プラットフォーム利用料 10% + 振込 270円/回。個人向け公式APIはなし（2026-10-08 に法人 note pro 限定の note API が発表）→ 手動公開の方針は変わらない
+  - 反映先: business-plan.md §2・§3、tech-decisions.md ADR-006、requirements.md §6
+- 発生した問題と対処:
+  - この実行環境から help-note.com / note.jp を直接開けない（ネットワーク制限）。値はすべて検索結果の抜粋経由（method: web_search）
+  - 調査担当が retrieved_at に 00:00 を仮置きしていた → 実行時刻（13:54〜13:58 JST）の上限 13:58 に修正し、notes に経緯を明記。再発防止として source-recording Skill と market-researcher 定義に「仮の時刻を書かない／進行役が依頼文に現在時刻を書く」を追加
+  - 調査担当の記録漏れ（Amazon Pay 7%、1,000円未満は Amazon ギフトカード払い）を進行役の照合で追記
+
+### オーナーに確認してほしいこと（フェーズ3）
+- [ ] ブラウザで公式ページを開き、手数料の数値が business-plan.md §2 と一致するか確認（https://www.help-note.com/hc/ja/articles/360011358873 ）
+- [ ] 任意: 環境設定の Network access で `help-note.com`, `www.help-note.com`, `terms.help-note.com`, `note.com`, `note.jp` を許可すると、今後は公式ページを直接取得して記録できる（手順: https://code.claude.com/docs/en/cloud-environments#network-access ）
+
+### フェーズ3 の残り
+- [ ] 6ジャンルのテーマ候補調査（出典付き 10件以上）— market-researcher
+- [ ] テーマ評価と選定（data/themes/）— marketing-strategist
+- [ ] 未確認事項: 一般会員とプレミアム会員で手数料率に違いがあるか、利用規約本文の自動化に関する条項（2026-10-23-004, 008 の notes 参照）
 
 ## 未実施・保留
 - Web 調査（フェーズ3）
-- note 公式APIの有無・手数料の最新確認（フェーズ3開始前に実施）
 
 ## 次の一手
 1. 以後、プッシュのたびに GitHub の Actions タブで CI（check）が緑か確認する（赤なら Claude Code に「CI が失敗したので直して」と依頼）
-2. フェーズ3（市場調査の実働化）へ:
-> docs/progress.md を読んで、フェーズ3を始めて。まず note の手数料と公式APIの有無を公式情報で確認して記録して
+2. フェーズ3の続き（テーマ候補調査）:
+> docs/progress.md を読んで、フェーズ3の続きとして、6ジャンルのテーマ候補を出典付きで調査して

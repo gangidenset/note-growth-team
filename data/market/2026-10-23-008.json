@@ -1,0 +1,16 @@
+{
+  "id": "2026-10-23-008",
+  "topic": "noteプラットフォーム仕様: 利用規約・ガイドライン（自動化・サーバー負荷）",
+  "source_url": "https://www.help-note.com/hc/ja/articles/4409925863193",
+  "source_title": "コミュニティガイドライン（note ヘルプセンター）",
+  "retrieved_at": "2026-10-23T13:58:00+09:00",
+  "method": "web_search",
+  "measurement": "observed",
+  "metrics": {
+    "server_overload_rule": "サーバーへ過度に負担をかける行為・スパム行為を『noteの運営を阻害する行為』として挙げている",
+    "explicit_scraping_or_auto_posting_clause": null
+  },
+  "estimation_basis": null,
+  "notes": "WebFetch がDNSエラーで失敗したため直接取得できていない。値は WebSearch 検索結果の抜粋（および Impress Watch 記事の紹介）による。規約本体『note ご利用規約』https://terms.help-note.com/hc/ja/articles/44943817565465 は検索でURLを確認したが本文は取得できず、スクレイピング・自動投稿を名指しで禁止/制限する条項の有無と条番号は未確認（explicit_scraping_or_auto_posting_clause は null。『条項がない』と確認したわけではない）。検索要約では、クリエイター規約の禁止事項にも『本サービスのサーバーに過度に負担をかける場合』があるとされたが条番号は個人記事ごとに異なり（10.1.7 / 9条）未確定。note embed機能ご利用規約 https://note.com/terms/embed にも同趣旨の項目があるとの抜粋あり（未取得）。retrieved_at の時刻部分は 00:00 を仮置き。要: ブラウザで規約本文の確認。 【取得日時について】調査担当が現在時刻を取得できず 00:00 を仮置きしていたため、進行役が修正。検索はエージェント実行中の 2026-10-23 13:54〜13:58（JST）頃に行われた（実行開始・終了時刻からの推定）。retrieved_at はその上限の 13:58。",
+  "collected_by": "market-researcher"
+}

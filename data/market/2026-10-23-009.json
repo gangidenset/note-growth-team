@@ -1,0 +1,19 @@
+{
+  "id": "2026-10-23-009",
+  "topic": "noteプラットフォーム仕様: 利用規約改定（2026年9月）",
+  "source_url": "https://note.jp/n/n5e9d53762140",
+  "source_title": "利用規約改定のお知らせ｜note株式会社",
+  "retrieved_at": "2026-10-23T13:58:00+09:00",
+  "method": "web_search",
+  "measurement": "observed",
+  "metrics": {
+    "notice_published_on": "2026-09-01",
+    "revision_effective_on_planned": "2026-09-16",
+    "revision_item_membership_price_change": "メンバーシップ各プランの月額会費をnoteが定める範囲・方法で変更可能とし、既存参加者にも適用（総則規約 9.9 追加）",
+    "revision_item_external_service_attribution": "noteの指定方法で外部サービスと接続した際の行為の帰属に関する規定を追加（文言は未確認）",
+    "fee_change_included": "not_mentioned_in_search_excerpt"
+  },
+  "estimation_basis": null,
+  "notes": "WebFetch がDNSエラーで失敗したため直接取得できていない。値は WebSearch 検索結果の抜粋・要約による。改定が予定どおり施行されたことを示す後続告知は検索では見つからなかった。別の改定告知 https://note.jp/n/n507718a7191f （2026-01-15付とされる。13条 有料オプションサービスの新設）も検索で確認したが手数料変更は含まれないとの要約。手数料（事務手数料・プラットフォーム利用料）の改定予告は検索範囲では見つからなかった。retrieved_at の時刻部分は 00:00 を仮置き。 【取得日時について】調査担当が現在時刻を取得できず 00:00 を仮置きしていたため、進行役が修正。検索はエージェント実行中の 2026-10-23 13:54〜13:58（JST）頃に行われた（実行開始・終了時刻からの推定）。retrieved_at はその上限の 13:58。",
+  "collected_by": "market-researcher"
+}

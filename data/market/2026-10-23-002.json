@@ -3,7 +3,7 @@
   "topic": "noteプラットフォーム仕様: 売上金の振込（最低額・手数料・タイミング）",
   "source_url": "https://www.help-note.com/hc/ja/articles/360010430873",
   "source_title": "売上金を受け取る（note ヘルプセンター）",
-  "retrieved_at": "2026-10-23T00:00:00+09:00",
+  "retrieved_at": "2026-10-23T13:58:00+09:00",
   "method": "web_search",
   "measurement": "observed",
   "metrics": {
@@ -13,9 +13,10 @@
     "transfer_timing_request_2nd_to_20th": "当月2日に確定済の売上と過去の未払い売上を当月末（最終営業日中）に振込",
     "transfer_timing_request_21st_to_next_1st": "申請時点で確定済の売上と過去の未払い売上を翌月末に振込",
     "concurrent_transfer_request": "振込完了まで次の振込申請は不可",
-    "page_updated_on": null
+    "page_updated_on": null,
+    "payout_under_1000jpy": "前月末までの未振込売上が1,000円未満の場合は Amazon ギフトカードで支払い（振込手数料なし、事務手数料・プラットフォーム利用料は差し引かれる）"
   },
   "estimation_basis": null,
-  "notes": "WebFetch がDNSエラーで失敗したため、ページは直接取得できていない。値は WebSearch の検索結果に含まれた同ページ（および関連ページ『売上金について』https://www.help-note.com/hc/ja/articles/360011270774）の抜粋による。振込手数料270円は手数料ページ（2026-10-23-001）とも一致。自動振込の有無は確認できなかった。ページ更新日は読めず null。retrieved_at の時刻部分は現在時刻を取得できなかったため 00:00 を仮置き。要: ブラウザでの直接確認。",
+  "notes": "WebFetch がDNSエラーで失敗したため、ページは直接取得できていない。値は WebSearch の検索結果に含まれた同ページ（および関連ページ『売上金について』https://www.help-note.com/hc/ja/articles/360011270774）の抜粋による。振込手数料270円は手数料ページ（2026-10-23-001）とも一致。自動振込の有無は確認できなかった。ページ更新日は読めず null。retrieved_at の時刻部分は現在時刻を取得できなかったため 00:00 を仮置き。要: ブラウザでの直接確認。 【取得日時について】調査担当が現在時刻を取得できず 00:00 を仮置きしていたため、進行役が修正。検索はエージェント実行中の 2026-10-23 13:54〜13:58（JST）頃に行われた（実行開始・終了時刻からの推定）。retrieved_at はその上限の 13:58。 【追記】1,000円未満の支払方法は進行役の照合時の検索抜粋（手数料ページ）で確認。 【照合】2026-10-23T13:58:37+09:00 進行役が別の WebSearch（help-note.com / note.jp / prtimes.jp に限定）で主要数値を照合し、一致を確認。ページ本体の直接取得はこの実行環境のネットワーク制限で不可。オーナーのブラウザでの確認待ち。",
   "collected_by": "market-researcher"
 }
