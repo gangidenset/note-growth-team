@@ -95,7 +95,7 @@
   - 調査担当の記録漏れ（Amazon Pay 7%、1,000円未満は Amazon ギフトカード払い）を進行役の照合で追記
 
 ### オーナーに確認してほしいこと（フェーズ3）
-- [ ] ブラウザで公式ページを開き、手数料の数値が business-plan.md §2 と一致するか確認（https://www.help-note.com/hc/ja/articles/360011358873 ）
+- [x] ブラウザで公式ページを開き、手数料の数値が business-plan.md §2 と一致するか確認（2026-10-23 オーナー確認済み・一致）
 - [ ] 任意: 環境設定の Network access で `help-note.com`, `www.help-note.com`, `terms.help-note.com`, `note.com`, `note.jp` を許可すると、今後は公式ページを直接取得して記録できる（手順: https://code.claude.com/docs/en/cloud-environments#network-access ）
 
 ### フェーズ3 の残り
