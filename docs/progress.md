@@ -114,7 +114,7 @@
 - [x] オーナー回答（2026-10-23）を owner_strength に反映。強いのは AI社員制作ログ・PWA自作アプリ・スロット（ジャグラー）・将棋（ウォーズ三段、右玉/筋違い角）。Flutter・SwiftUI・テニス・Switch 2 構築は実体験が乏しく 1
 - [x] 回答から新候補2件を進行役が追加: pwa-personal-smartphone-apps、juggler-setting-tool（marketing-strategist の評価前。PWA は市場データ未収集）
 - [ ] **オーナーがテーマを1つ選ぶ** → 進行役が status を selected に変更（selected には市場データIDが必須。PWA を選ぶ場合は先に追加調査）
-- [ ] 確認待ち: 使用技術の「base」は何か（Supabase / BASE など）、Mac の有無、スロットの実戦記録（日付・機種・収支）が残っているか
+- [x] 確認済み（2026-10-23）: 「base」は Supabase とネットショップ BASE の両方を使用経験あり。Mac なし。スロットの実戦記録は GitHub リポジトリ（README あり）にある
 - [ ] 推奨テーマの追加調査（market-researcher＋進行役の curl 照合）: Claude Code の CLAUDE.md・Subagent・フックを扱う有料記事の件数・価格・スキ数、013 の照合
 - [ ] 未確認事項: 一般会員とプレミアム会員で手数料率に違いがあるか、利用規約本文の自動化に関する条項（2026-10-23-004, 008 の notes 参照）
 

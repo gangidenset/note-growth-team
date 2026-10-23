@@ -14,9 +14,10 @@
   "hypotheses": [
     "需要の証拠はまだない（PWA/TWA の有料記事の市場データ未収集）。demand=2 は保守的な仮置き",
     "「プログラミング初心者でも自分用アプリを持てる」層に需要がある、という仮説",
-    "進行役が追加（marketing-strategist の評価前）。evidence_ids は追加調査後に埋める"
+    "進行役が追加（marketing-strategist の評価前）。evidence_ids は追加調査後に埋める",
+    "オーナー追加回答（2026-10-23T15:10:00+09:00）: Supabase とネットショップ BASE の両方を使用経験あり（Firebase に加えて）。"
   ],
   "price_plan_jpy": 500,
   "decided_by": "orchestrator",
-  "updated_at": "2026-10-23T15:03:00+09:00"
+  "updated_at": "2026-10-23T15:10:00+09:00"
 }
