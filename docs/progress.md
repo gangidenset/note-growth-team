@@ -29,9 +29,14 @@
 ## 残課題
 ### オーナー確認が必要
 - [ ] 設計（requirements / architecture / business-plan）のレビュー
-- [ ] 記事ジャンル・得意分野・実名/匿名方針の決定（requirements.md §8）
-- [ ] Claude Code の利用形態（サブスク or API従量）と月額予算上限
+- [x] 記事ジャンル・得意分野・実名/匿名方針の決定（2026-10-23、requirements.md §8）
+- [x] Claude Code の利用形態（サブスク推奨）と月額予算上限 10,000円（business-plan.md §7）
+- [ ] 予算内のサブスクリプションプランを公式料金ページで確認して契約（オーナー作業）
 - [ ] note 手数料の公式ヘルプでの確認（business-plan.md §2）
+- [ ] `.claude/settings.json` の deny 範囲の修正可否（下記「既知の問題」）
+
+### 既知の問題
+- `.claude/settings.json` の `Read(./.env.*)` / `Edit(./.env.*)` が `.env.example` にも一致し、Claude Code が `.env.example` を読み書きできない。そのため `.env.example` の `NGT_MONTHLY_BUDGET_JPY` は 3000 のまま（正しくは 10000）。修正案: deny を `.env`, `.env.local`, `.env.*.local`, `.env.production` など実ファイル名に限定する。
 
 ### AI 側（フェーズ2）
 - [ ] package.json 作成と依存インストール（ネットワーク使用のため実行時に確認）
