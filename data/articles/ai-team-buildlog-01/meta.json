@@ -1,12 +1,12 @@
 {
   "id": "ai-team-buildlog-01",
   "theme_id": "claude-code-ai-team-buildlog",
-  "status": "planning",
+  "status": "drafting",
   "title": "",
   "price_jpy": 980,
   "published_url": null,
   "created_at": "2026-10-23T15:07:24+09:00",
-  "updated_at": "2026-10-23T15:07:25+09:00",
+  "updated_at": "2026-10-23T15:09:29+09:00",
   "history": [
     {
       "from": "idea",
@@ -21,6 +21,13 @@
       "at": "2026-10-23T15:07:25+09:00",
       "by": "ai",
       "reason": "市場データ 2026-10-23-012,013,014,028 を根拠に企画へ"
+    },
+    {
+      "from": "planning",
+      "to": "drafting",
+      "at": "2026-10-23T15:09:29+09:00",
+      "by": "ai",
+      "reason": "テーマ selected、執筆開始"
     }
   ]
 }
