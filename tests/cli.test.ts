@@ -5,12 +5,13 @@ import { checkHumanTerminal } from "../src/cli/human-guard.js";
 import { makeTempRepo, marketRecord, writeJson } from "./helpers.js";
 
 const PROJECT_ROOT = join(import.meta.dirname, "..");
-const TSX = join(PROJECT_ROOT, "node_modules", ".bin", "tsx");
+// .bin/tsx は Windows では tsx.cmd になり直接起動できないため、node で JS 本体を起動する
+const TSX_CLI = join(PROJECT_ROOT, "node_modules", "tsx", "dist", "cli.mjs");
 const CLI = join(PROJECT_ROOT, "src", "cli", "index.ts");
 
 /** CLI を別プロセスで実行する（標準入力はパイプ＝非TTY） */
 function runCli(root: string, args: string[], env: Record<string, string | undefined> = {}) {
-  const result = spawnSync(TSX, [CLI, ...args], {
+  const result = spawnSync(process.execPath, [TSX_CLI, CLI, ...args], {
     cwd: PROJECT_ROOT,
     env: { ...process.env, NGT_ROOT: root, ...env },
     encoding: "utf8",

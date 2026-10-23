@@ -1,7 +1,7 @@
 # 進捗と残課題
 
 - 最終更新: 2026-10-23（JST）
-- 現在のフェーズ: **フェーズ2 進行中（手順1〜9 完了、残りは手順10 CI のみ）**
+- 現在のフェーズ: **フェーズ2 完了（CI の初回結果確認待ち）→ 次はフェーズ3**
 - 作業ブランチ: `claude/upbeat-cerf-5k2jv2`
 
 ## 環境確認結果（2026-10-23、クラウド実行環境）
@@ -70,8 +70,11 @@
   - 途中で `$env:NGT_ROOT` の設定を飛ばして「記事が見つかりません」になった → demo:setup の案内を OS 別・番号付きに改善、エラーに探した場所を表示
   - 参考: npm install 時の `npm warn allow-scripts ... esbuild` は新しい npm の警告。tsx は正常に動作しているため対応不要
 
-### AI 側（フェーズ2の残り）
-- [ ] 手順10: GitHub Actions（CI）— push 時に `npm ci && npm run check`
+### フェーズ2 手順10（CI）
+- [x] `.github/workflows/check.yml`: push / プルリクエスト / 手動実行で `npm ci && npm run check`。Ubuntu（Node 22, 24）と Windows（Node 24）。権限は contents: read のみ
+- [x] CLI テストを Windows でも動くよう修正（`.bin/tsx` ではなく `node node_modules/tsx/dist/cli.mjs` で起動）
+- [x] ローカルでクリーンな clone から `npm ci` → `npm run check` を再現し 228 件成功（2026-10-23）
+- [ ] GitHub 上での初回実行結果の確認（Actions タブ。Windows ジョブは手元で未検証のため、失敗したら修正する）
 
 ## 実装メモ（再開時の参考）
 - 状態機械は `checkTransition(from, to, ctx)` で判定のみ行う。ファイルの存在確認・qa.json 読み込み・ハッシュ照合は CLI 側（手順5〜6）で `TransitionContext` に詰めて渡す。
@@ -86,8 +89,6 @@
 - note 公式APIの有無・手数料の最新確認（フェーズ3開始前に実施）
 
 ## 次の一手
-Claude Code に次のように依頼する:
-> docs/progress.md を読んで、フェーズ2の手順10（GitHub Actions で npm run check を実行する CI）を実装して
-
-その後はフェーズ3（市場調査の実働化）へ:
+1. GitHub の Actions タブで CI（check）が緑になっているか確認する（赤なら Claude Code に「CI が失敗したので直して」と依頼）
+2. フェーズ3（市場調査の実働化）へ:
 > docs/progress.md を読んで、フェーズ3を始めて。まず note の手数料と公式APIの有無を公式情報で確認して記録して
