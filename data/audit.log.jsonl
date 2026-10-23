@@ -2,3 +2,4 @@
 {"at":"2026-10-23T15:07:24+09:00","actor":"ai","action":"transition","article_id":"ai-team-buildlog-01","from":"idea","to":"researching","reason":"テーマ選定済み（根拠の市場データあり）"}
 {"at":"2026-10-23T15:07:25+09:00","actor":"ai","action":"transition","article_id":"ai-team-buildlog-01","from":"researching","to":"planning","reason":"市場データ 2026-10-23-012,013,014,028 を根拠に企画へ"}
 {"at":"2026-10-23T15:09:29+09:00","actor":"ai","action":"transition","article_id":"ai-team-buildlog-01","from":"planning","to":"drafting","reason":"テーマ selected、執筆開始"}
+{"at":"2026-10-23T15:33:04+09:00","actor":"ai","action":"transition","article_id":"ai-team-buildlog-01","from":"drafting","to":"qa","reason":"下書きとオーナー記入が完了"}
