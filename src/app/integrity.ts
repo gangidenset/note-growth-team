@@ -20,15 +20,23 @@ export function checkIntegrity(repo: Repository): IntegrityIssue[] {
   const issues: IntegrityIssue[] = [];
   const add = (target: string, message: string) => issues.push({ target, message });
 
+  // 未来の日時は「見積もり・仮置き」で書かれた可能性が高い（時計のずれとして5分までは許容）
+  const limit = Date.parse(repo.now()) + 5 * 60_000;
+  const checkNotFuture = (target: string, label: string, value: string) => {
+    if (Date.parse(value) > limit) add(target, `${label}（${value}）が未来の日時です。実際の取得・更新日時を記録してください`);
+  };
+
   // 市場データ
   const market = repo.loadMarketRecords();
   for (const r of market) for (const e of r.errors) add(`data/market/${r.file}`, e);
+  for (const r of market) if (r.record) checkNotFuture(`data/market/${r.file}`, "retrieved_at", r.record.retrieved_at);
   const marketIds = new Set(market.flatMap((r) => (r.record ? [r.record.id] : [])));
 
   // テーマ
   for (const { file, theme, errors } of repo.loadThemes()) {
     for (const e of errors) add(`data/themes/${file}`, e);
     if (!theme) continue;
+    checkNotFuture(`data/themes/${file}`, "updated_at", theme.updated_at);
     for (const id of theme.evidence_ids) {
       if (!marketIds.has(id)) add(`data/themes/${file}`, `根拠の市場データ ${id} が存在しないか不正です`);
     }

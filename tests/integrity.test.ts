@@ -90,6 +90,17 @@ describe("checkIntegrity", () => {
     expect(text).toContain("根拠の市場データ 2026-10-23-001");
   });
 
+  it("未来の取得日時・更新日時を検出する（5分までは許容）", () => {
+    const repo = makeTempRepo(); // 時計は 2026-10-23T03:00:00Z 付近（= 12:00 JST）
+    writeJson(repo, "data/market/2026-10-23-001.json", { ...marketRecord, retrieved_at: "2026-10-23T12:03:00+09:00" });
+    expect(checkIntegrity(repo)).toEqual([]);
+    writeJson(repo, "data/market/2026-10-23-001.json", { ...marketRecord, retrieved_at: "2026-10-23T14:55:00+09:00" });
+    writeJson(repo, "data/themes/flutter-demo.json", { ...selectedTheme, updated_at: "2026-10-24T09:00:00+09:00" });
+    const text = messages(repo);
+    expect(text).toContain("retrieved_at（2026-10-23T14:55:00+09:00）が未来");
+    expect(text).toContain("updated_at（2026-10-24T09:00:00+09:00）が未来");
+  });
+
   it("壊れた監査ログの行を検出する", () => {
     const repo = makeTempRepo();
     writeText(repo, "data/audit.log.jsonl", "{壊れた行\n");

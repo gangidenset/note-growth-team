@@ -1,7 +1,7 @@
 # 進捗と残課題
 
 - 最終更新: 2026-10-23（JST）
-- 現在のフェーズ: **フェーズ3 進行中（テーマ候補10件、オーナーの選択待ち）**
+- 現在のフェーズ: **フェーズ3 完了（テーマ選定済み）→ 次はフェーズ4（ai-team-buildlog-01 の執筆）**
 - 作業ブランチ: `claude/upbeat-cerf-5k2jv2`
 
 ## 環境確認結果（2026-10-23、クラウド実行環境）
@@ -113,7 +113,9 @@
   - 計画値: 980円×3本×各月約18本 ≒ 52,920円（手取り80%仮定で約4.2万円）
 - [x] オーナー回答（2026-10-23）を owner_strength に反映。強いのは AI社員制作ログ・PWA自作アプリ・スロット（ジャグラー）・将棋（ウォーズ三段、右玉/筋違い角）。Flutter・SwiftUI・テニス・Switch 2 構築は実体験が乏しく 1
 - [x] 回答から新候補2件を進行役が追加: pwa-personal-smartphone-apps、juggler-setting-tool（marketing-strategist の評価前。PWA は市場データ未収集）
-- [ ] **オーナーがテーマを1つ選ぶ** → 進行役が status を selected に変更（selected には市場データIDが必須。PWA を選ぶ場合は先に追加調査）
+- [x] オーナーが1本目のテーマに claude-code-ai-team-buildlog（AI社員システムの制作ログ、980円）を選定（2026-10-23）→ status: selected、decided_by: owner
+- [x] 記事パッケージ `ai-team-buildlog-01` を作成し planning まで遷移（タイトル未定、価格 980円）
+- [x] 進行役のミスと対処: 追加回答の記録で updated_at に未来の時刻（15:10、実際は 15:06）を書いていた → 修正。再発防止として data:check に「5分以上先の retrieved_at / updated_at を検出」を追加（テスト追加、計230件）
 - [x] 確認済み（2026-10-23）: 「base」は Supabase とネットショップ BASE の両方を使用経験あり。Mac なし。スロットの実戦記録は GitHub リポジトリ（README あり）にある
 - [ ] 推奨テーマの追加調査（market-researcher＋進行役の curl 照合）: Claude Code の CLAUDE.md・Subagent・フックを扱う有料記事の件数・価格・スキ数、013 の照合
 - [ ] 未確認事項: 一般会員とプレミアム会員で手数料率に違いがあるか、利用規約本文の自動化に関する条項（2026-10-23-004, 008 の notes 参照）
@@ -124,4 +126,4 @@
 ## 次の一手
 1. 以後、プッシュのたびに GitHub の Actions タブで CI（check）が緑か確認する（赤なら Claude Code に「CI が失敗したので直して」と依頼）
 2. フェーズ3の続き（テーマ候補調査）:
-> （オーナーがテーマを選んだら）docs/progress.md を読んで、<テーマID> を selected にしてフェーズ4（記事作成）の準備をして
+> docs/progress.md を読んで、フェーズ4として ai-team-buildlog-01 の無料記事と有料記事の下書きを editor-writer で作って
