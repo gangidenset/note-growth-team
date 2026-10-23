@@ -1,0 +1,22 @@
+{
+  "id": "pwa-personal-smartphone-apps",
+  "title": "ストアに出さずに自分用スマホアプリを作る：PWA/TWA と Firebase で9本作った方法",
+  "genre": "app_dev",
+  "status": "candidate",
+  "evidence_ids": [],
+  "scores": {
+    "demand": 2,
+    "competition": 3,
+    "owner_strength": 5,
+    "production_cost": 4
+  },
+  "rationale": "オーナーが HTML/CSS/JS・PWA・TWA・Firebase で自分用アプリを9本作り、実際にスマホで使っているという実体験（オーナー回答）に基づく。ストア公開なしで使えるという切り口は、既存の Flutter/SwiftUI の有料記事（2026-10-23-010, 011）と技術・読者層が異なる。",
+  "hypotheses": [
+    "需要の証拠はまだない（PWA/TWA の有料記事の市場データ未収集）。demand=2 は保守的な仮置き",
+    "「プログラミング初心者でも自分用アプリを持てる」層に需要がある、という仮説",
+    "進行役が追加（marketing-strategist の評価前）。evidence_ids は追加調査後に埋める"
+  ],
+  "price_plan_jpy": 500,
+  "decided_by": "orchestrator",
+  "updated_at": "2026-10-23T15:03:00+09:00"
+}
