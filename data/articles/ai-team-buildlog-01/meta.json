@@ -1,12 +1,12 @@
 {
   "id": "ai-team-buildlog-01",
   "theme_id": "claude-code-ai-team-buildlog",
-  "status": "awaiting_approval",
+  "status": "approved",
   "title": "Claude Code の AI社員に「承認・公開」をさせない設計図: CLAUDE.md・settings.json・PreToolUse フックの実例と6つの失敗の直し方",
   "price_jpy": 980,
   "published_url": null,
   "created_at": "2026-10-23T15:07:24+09:00",
-  "updated_at": "2026-10-23T21:44:07+09:00",
+  "updated_at": "2026-10-23T22:05:24+09:00",
   "history": [
     {
       "from": "idea",
@@ -112,6 +112,13 @@
       "at": "2026-10-23T21:44:07+09:00",
       "by": "ai",
       "reason": "再チェック ready_for_approval（F1〜F11 pass）。minor 指摘 F11-2〜4 は品質担当の修正案どおり進行役が反映"
+    },
+    {
+      "from": "awaiting_approval",
+      "to": "approved",
+      "at": "2026-10-23T22:05:24+09:00",
+      "by": "owner",
+      "reason": ""
     }
   ]
 }

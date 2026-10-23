@@ -14,3 +14,4 @@
 {"at":"2026-10-23T21:35:58+09:00","actor":"ai","action":"transition","article_id":"ai-team-buildlog-01","from":"needs_revision","to":"drafting","reason":"面白みの追加"}
 {"at":"2026-10-23T21:40:45+09:00","actor":"ai","action":"transition","article_id":"ai-team-buildlog-01","from":"drafting","to":"qa","reason":"常体化・根拠節化・面白み追加が完了、再チェック"}
 {"at":"2026-10-23T21:44:07+09:00","actor":"ai","action":"transition","article_id":"ai-team-buildlog-01","from":"qa","to":"awaiting_approval","reason":"再チェック ready_for_approval（F1〜F11 pass）。minor 指摘 F11-2〜4 は品質担当の修正案どおり進行役が反映"}
+{"at":"2026-10-23T22:05:24+09:00","actor":"owner","action":"approved","article_id":"ai-team-buildlog-01","from":"awaiting_approval","to":"approved","content_sha256":"ff940bda5520a17a00f58a506f48ac1ad7f62b072a1bfb4cbaaec2702f2e7d61"}
