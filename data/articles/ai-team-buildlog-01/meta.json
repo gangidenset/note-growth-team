@@ -1,12 +1,12 @@
 {
   "id": "ai-team-buildlog-01",
   "theme_id": "claude-code-ai-team-buildlog",
-  "status": "qa",
+  "status": "drafting",
   "title": "Claude Code の AI社員に「承認・公開」をさせない設計図: CLAUDE.md・settings.json・PreToolUse フックの実例と6つの失敗の直し方",
   "price_jpy": 980,
   "published_url": null,
   "created_at": "2026-10-23T15:07:24+09:00",
-  "updated_at": "2026-10-23T15:33:04+09:00",
+  "updated_at": "2026-10-23T15:37:16+09:00",
   "history": [
     {
       "from": "idea",
@@ -35,6 +35,20 @@
       "at": "2026-10-23T15:33:04+09:00",
       "by": "ai",
       "reason": "下書きとオーナー記入が完了"
+    },
+    {
+      "from": "qa",
+      "to": "needs_revision",
+      "at": "2026-10-23T15:37:15+09:00",
+      "by": "ai",
+      "reason": "qa: F2 critical（無料記事のルール数5/6の食い違い、オーナー記入部分の照合経路の誤り、失敗3の因果の断定、推定の明記漏れ）と F11 minor"
+    },
+    {
+      "from": "needs_revision",
+      "to": "drafting",
+      "at": "2026-10-23T15:37:16+09:00",
+      "by": "ai",
+      "reason": "qa 指摘の修正"
     }
   ]
 }

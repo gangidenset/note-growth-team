@@ -48,7 +48,7 @@
 ## 残課題
 ### オーナー確認が必要
 - [ ] 設計（requirements / architecture / business-plan）のレビュー
-- [ ] 予算内のサブスクリプションプランを公式料金ページで確認して契約（オーナー作業）
+- [x] Claude Code のサブスクリプション: オーナーは Claude の Pro プランを契約済み（2026-10-23 オーナー回答）
 - [ ] note 手数料の公式ヘルプでの確認（business-plan.md §2）
 - [x] `.claude/settings.json` の deny 範囲を修正（2026-10-23 オーナー了承）
 
@@ -96,7 +96,7 @@
 
 ### オーナーに確認してほしいこと（フェーズ3）
 - [x] ブラウザで公式ページを開き、手数料の数値が business-plan.md §2 と一致するか確認（2026-10-23 オーナー確認済み・一致）
-- [ ] 任意: 環境設定の Network access で `help-note.com`, `www.help-note.com`, `terms.help-note.com`, `note.com`, `note.jp` を許可すると、今後は公式ページを直接取得して記録できる（手順: https://code.claude.com/docs/en/cloud-environments#network-access ）
+- [x] 環境設定の Network access で note のドメインを許可（2026-10-23 オーナー実施）。許可後、進行役の curl では note.com を取得できるが、Subagent の WebFetch は DNS エラーのまま
 
 ### テーマ候補調査（2026-10-23）
 - [x] 6ジャンルのテーマ候補調査 — market-researcher が 17件（2026-10-23-010〜026、すべて web_search の抜粋）、進行役が照合用に 3件（027〜029、web_fetch で直接取得）

@@ -60,7 +60,7 @@ Claude Code の利用歴はまだ浅く、これまでは自分でコードを�
 書くときに意識した点は3つです。
 
 **(1) 禁止するだけでなく「代わりにどうするか」を書く。**
-たとえばルール3と同じファイルに、「承認系のコマンドがブロックされたら回避策を探さず、オーナーに依頼すること」と書いています。止められた AI が別の書き方で再挑戦しないようにするためです。
+たとえばルール3と同じファイルに、承認系のコマンドについて「ブロックされたら回避策を探さず、オーナーに依頼すること。」と書いています。止められた AI が別の書き方で再挑戦しないようにするためです。
 
 **(2) 担当ごとの細かい手順は Skill に分ける。**
 「出典の記録形式」「記事の構成」「公開前チェック」「状態遷移と承認」「進捗の引き継ぎ」の5つを `.claude/skills/` に Skill として置き、`CLAUDE.md` や各担当の定義ファイルからは Skill の名前で参照しています。担当（Subagent）は「誰がやるか」、Skill は「どうやるか」という分け方です（出典: docs/architecture.md §2.3）。
@@ -99,7 +99,6 @@ tools: Read, Grep, Glob, Write, Edit
   "Read(./.env.test)",
   "Read(./secrets/**)",
   "Edit(./.env)",
-  "（Edit と Write も Read と同じ .env 系の7種類を禁止。省略）",
   "Edit(./data/approvals/**)",
   "Write(./data/approvals/**)",
   "Bash(npm run approve:*)",
@@ -110,6 +109,8 @@ tools: Read, Grep, Glob, Write, Edit
   "Bash(npm publish:*)"
 ]
 ```
+
+…（`"Edit(./.env)"` の直後にある、Read と同じ .env 系を対象にした Edit 6行・Write 7行の計13行は省略）
 
 （出典: .claude/settings.json。紙面の都合で一部を省略し、省略箇所を注記しています）
 
@@ -389,8 +390,8 @@ settings.json とフックを万一すり抜けても、ここで止まる、と
 ### 失敗3: 調査担当が取得日時に「00:00」を仮置きした
 
 - **経緯**: note の手数料などを調べた市場データの取得日時が `00:00` になっていた。
-- **原因**: 調査担当（Subagent）はコマンド実行（Bash）を持たないため、現在時刻を調べる手段がなかった。再発防止のルールに「Bash がない Subagent など」と書いたのはこのため。
-- **直し方**: 実際の作業時間帯（13:54〜13:58 JST）の上限である 13:58 に直し、データのメモ欄（notes）に経緯を書いた。再発防止として、出典記録の Skill と調査担当の定義に「仮の時刻を書かない」「進行役が依頼文に現在時刻を書く」を追加した。
+- **原因**: 調査担当は現在時刻を取得できず、00:00 を仮置きしていた（記録: 市場データ 001 の notes）。調査担当にはコマンド実行（Bash）を持たせておらず、時刻を調べる手段がなかったと考えられます。
+- **直し方**: 実際の作業時間帯（13:54〜13:58 JST。実行開始・終了時刻からの推定）の上限である 13:58 に直し、データのメモ欄（notes）に経緯を書いた。再発防止として、出典記録の Skill と調査担当の定義に「仮の時刻を書かない」「進行役が依頼文に現在時刻を書く」を追加した。
 - **ルールの実際の文面**:
 
 ```markdown
@@ -399,7 +400,7 @@ settings.json とフックを万一すり抜けても、ここで止まる、と
 - 時刻がまったく分からない場合は保存せず、記録内容を報告して進行役に保存を任せる。
 ```
 
-（出典: docs/progress.md「フェーズ3」、.claude/skills/source-recording/SKILL.md）
+（出典: docs/progress.md「フェーズ3」、data/market/2026-10-23-001.json、.claude/agents/market-researcher.md、.claude/skills/source-recording/SKILL.md）
 
 同じ調査では、調査担当の記録漏れ（支払い方法ごとの手数料の一部）を、進行役が照合して追記しています。調査担当の結果を、別の目で照合する流れが役に立った例です（出典: docs/progress.md「フェーズ3」）。
 
@@ -432,8 +433,8 @@ settings.json とフックを万一すり抜けても、ここで止まる、と
 次のコマンドを、上から1行ずつ実行してください（1行目を飛ばすと本物の data/ を見てしまいます）:
 
   1. $env:NGT_ROOT="<練習用フォルダの場所>"
-  2. npm run approve -- <記事ID>        （記事IDの入力を求められたら <記事ID> と入力）
-  3. npm run publish:record -- <記事ID> https://note.com/demo/n/n0000000000   （yes と入力）
+  2. npm run approve -- demo-001        （記事IDの入力を求められたら demo-001 と入力）
+  3. npm run publish:record -- demo-001 https://note.com/demo/n/n0000000000   （yes と入力）
   4. npm run article:status
   5. npm run data:check
 ```

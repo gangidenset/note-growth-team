@@ -50,7 +50,7 @@
 | `quality-analyst.md` | 公開前チェック、捏造検知、公開後の実績分析 | `data/articles/<id>/qa.json`, `reports/` | Read, Grep, Glob, Write（Bash は未付与。検証コマンドは進行役が実行） |
 
 - どの Subagent も **承認・公開・削除・課金・外部送信の権限を持たない**。
-- Bash を与えるのは quality-analyst のみ（検証コマンド実行用）。
+- Bash はどの Subagent にも与えていない。テストや検証コマンド（npm run check 等）は進行役（メインセッション）が実行する。
 
 ### 2.3 Skills（`.claude/skills/<name>/SKILL.md`）
 
