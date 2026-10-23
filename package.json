@@ -19,6 +19,7 @@
     "market:validate": "tsx src/cli/index.ts market:validate",
     "data:check": "tsx src/cli/index.ts data:check",
     "secret-scan": "tsx scripts/secret-scan.ts",
+    "demo:setup": "tsx scripts/demo-setup.ts",
     "approve": "tsx src/cli/index.ts approve",
     "publish:record": "tsx src/cli/index.ts publish:record"
   },
