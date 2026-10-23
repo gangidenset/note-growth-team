@@ -16,3 +16,4 @@
 {"at":"2026-10-23T21:44:07+09:00","actor":"ai","action":"transition","article_id":"ai-team-buildlog-01","from":"qa","to":"awaiting_approval","reason":"再チェック ready_for_approval（F1〜F11 pass）。minor 指摘 F11-2〜4 は品質担当の修正案どおり進行役が反映"}
 {"at":"2026-10-23T22:05:24+09:00","actor":"owner","action":"approved","article_id":"ai-team-buildlog-01","from":"awaiting_approval","to":"approved","content_sha256":"ff940bda5520a17a00f58a506f48ac1ad7f62b072a1bfb4cbaaec2702f2e7d61"}
 {"at":"2026-10-23T22:15:34+09:00","actor":"ai","action":"transition","article_id":"ai-team-buildlog-01","from":"approved","to":"awaiting_approval","reason":"note 投稿時に「2. の」等の章参照が番号付きリストとして「1.」に振り直され意味が変わるため、paid.md 手順1・3・5・6・7 の参照を「N章の」に変更。承認後の本文変更のため承認を取り消し再承認待ち"}
+{"at":"2026-10-23T22:17:11+09:00","actor":"owner","action":"approved","article_id":"ai-team-buildlog-01","from":"awaiting_approval","to":"approved","content_sha256":"94ac00fb4a7c98fe07d8a6b9d64ba4e41e359063b1ba51feb937af4344ad3abf"}
