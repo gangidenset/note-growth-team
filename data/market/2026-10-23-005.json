@@ -1,0 +1,21 @@
+{
+  "id": "2026-10-23-005",
+  "topic": "noteプラットフォーム仕様: メンバーシップの手数料・価格",
+  "source_url": "https://www.help-note.com/hc/ja/articles/900000163906",
+  "source_title": "メンバーシップとは（note ヘルプセンター）",
+  "retrieved_at": "2026-10-23T00:00:00+09:00",
+  "method": "web_search",
+  "measurement": "observed",
+  "metrics": {
+    "membership_platform_fee_percent": 10,
+    "subscription_magazine_platform_fee_percent": 20,
+    "membership_plan_price_min_jpy": 100,
+    "membership_plan_price_max_regular_jpy": 50000,
+    "membership_plan_price_max_premium_or_note_pro_jpy": 100000,
+    "membership_admin_fee": "別途、購読者の決済手段に応じた事務手数料がかかる（料率は 2026-10-23-001 参照）",
+    "page_updated_on": null
+  },
+  "estimation_basis": null,
+  "notes": "WebFetch がDNSエラーで失敗したため直接取得できていない。値は WebSearch 検索結果の要約・抜粋による（『メンバーシップとは』に加え『メンバーシップに関するよくあるお問い合わせ』https://www.help-note.com/hc/ja/articles/900000164086 の内容が混ざっている可能性あり。どちらのページの記載かは未確定）。公式LP https://note.com/lp/membership にも『プラットフォーム手数料：10%（別途、決済手数料と振込手数料がかかります）』との抜粋あり。検索要約による補足: 無料プランは note pro 契約者のみ、公開プラン最大5つ、2026-08-03以降の新規参加者は原則入会日が請求日（『メンバーシップの請求タイミングの変更について』https://www.help-note.com/hc/ja/articles/60464028042009）。2022年の手数料0円キャンペーンは2022-10-01で終了（note編集部記事）。ページ更新日は読めず null。retrieved_at の時刻部分は 00:00 を仮置き。要: ブラウザでの直接確認。",
+  "collected_by": "market-researcher"
+}

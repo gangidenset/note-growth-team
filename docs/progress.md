@@ -84,6 +84,11 @@
 - 内容ハッシュの対象は タイトル・価格・free.md・paid.md。承認後にどれかを変えると承認は無効 → `article:transition -- <id> awaiting_approval --reason ...` で戻して再承認。
 - CLI は TZ 未指定なら Asia/Tokyo で日時を記録する。テストや動作確認では `NGT_ROOT=<一時ディレクトリ>` で本物の data/ を汚さない。
 
+## フェーズ3（進行中）
+- [ ] note の手数料・公式APIの有無を公式情報で確認（market-researcher に委任中、2026-10-23 開始）
+  - `data/market/2026-10-23-001〜003.json` は調査途中で保存されたもの。スキーマ検証は通過済みだが、**進行役による公式ページとの照合は未実施**。照合が終わるまで business-plan 等には反映しない
+- [ ] 照合後、business-plan.md §2・§3（手数料と手取り）、tech-decisions.md ADR-006 と requirements.md §6（公式API）を更新
+
 ## 未実施・保留
 - Web 調査（フェーズ3）
 - note 公式APIの有無・手数料の最新確認（フェーズ3開始前に実施）

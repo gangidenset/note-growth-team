@@ -1,0 +1,29 @@
+{
+  "id": "2026-10-23-001",
+  "topic": "noteプラットフォーム仕様: 手数料（有料記事・有料マガジン・メンバーシップ等）",
+  "source_url": "https://www.help-note.com/hc/ja/articles/360011358873",
+  "source_title": "コンテンツを販売する際に引かれる手数料（note ヘルプセンター）",
+  "retrieved_at": "2026-10-23T00:00:00+09:00",
+  "method": "web_search",
+  "measurement": "observed",
+  "metrics": {
+    "admin_fee_credit_card_percent": 5,
+    "admin_fee_mobile_carrier_percent": 15,
+    "admin_fee_paypay_percent": 7,
+    "admin_fee_note_point_percent": 10,
+    "admin_fee_paypal_percent": 6.5,
+    "platform_fee_paid_article_percent": 10,
+    "platform_fee_paid_magazine_percent": 10,
+    "platform_fee_tip_percent": 10,
+    "platform_fee_membership_percent": 10,
+    "platform_fee_subscription_magazine_percent": 20,
+    "platform_fee_base": "売上金額から事務手数料を引いた金額に料率を乗じる",
+    "admin_fee_basis": "購読者（購入者）の決済手段の料率による（クリエイターの登録決済手段ではない）",
+    "transfer_fee_jpy_per_transfer": 270,
+    "example_1000jpy_credit_card_total_service_fee_jpy": 145,
+    "page_updated_on": null
+  },
+  "estimation_basis": null,
+  "notes": "WebFetch がDNSエラー（getaddrinfo ENOTFOUND）で失敗したため、ページ本体は直接取得できていない。値は WebSearch の検索結果に含まれた同ページの抜粋（複数回の検索で一致）から記録した。ページ内の見出し『事務手数料』『プラットフォーム利用料』『振込手数料』と計算例（1,000円・クレジットカード: 事務手数料50円+プラットフォーム利用料95円=145円、振込手数料270円を加えると振込額585円）に記載。会員種別（一般/プレミアム）による料率の違いは検索抜粋では確認できなかった。ページの更新日は検索結果から読めなかったため null（ある検索要約では『最終更新は約1年半前と表示』とあったが日付は未確認）。retrieved_at の時刻部分は実行環境で現在時刻を取得できなかったため 00:00 を仮置き（取得日 2026-10-23 は事実）。要: ブラウザでの直接確認。",
+  "collected_by": "market-researcher"
+}

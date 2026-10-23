@@ -1,0 +1,20 @@
+{
+  "id": "2026-10-23-006",
+  "topic": "noteプラットフォーム仕様: 公式API（法人向け note API）",
+  "source_url": "https://note.jp/n/n6e16e4dc9e26",
+  "source_title": "外部サービスからnoteの記事作成・管理が可能に。法人向けに「note API」の提供を開始｜note株式会社",
+  "retrieved_at": "2026-10-23T00:00:00+09:00",
+  "method": "web_search",
+  "measurement": "observed",
+  "metrics": {
+    "api_status": "official_api_for_note_pro_corporate_only",
+    "announced_on": "2026-10-08",
+    "api_target": "法人向けプラン note pro の契約者",
+    "api_additional_fee": "note API 自体の追加料金なし（note pro と対応サービスの利用料は必要）",
+    "api_first_integration": "StoryHub株式会社『StoryHubスタジオ』（noteの下書きとして保存）",
+    "api_for_individual_creators": "not_announced"
+  },
+  "estimation_basis": null,
+  "notes": "note株式会社の公式note（note.jp）のプレスリリース。同内容が PR TIMES https://prtimes.jp/main/html/rd/p/000000435.000017890.html にも掲載。WebFetch がDNSエラーで失敗したため直接取得できておらず、値は WebSearch 検索結果の抜粋・要約による。機能（作成・公開・更新、マガジン追加、アクセスデータ取得）の範囲や、公開操作・見出し画像・有料設定に未対応との説明は検索要約に含まれるが、出典が個人記事と混在していたため metrics には入れていない。一般（個人）向けの公開APIは確認できなかった。retrieved_at の時刻部分は 00:00 を仮置き。要: ブラウザでの直接確認。",
+  "collected_by": "market-researcher"
+}
