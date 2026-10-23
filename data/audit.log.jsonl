@@ -6,3 +6,4 @@
 {"at":"2026-10-23T15:37:15+09:00","actor":"ai","action":"transition","article_id":"ai-team-buildlog-01","from":"qa","to":"needs_revision","reason":"qa: F2 critical（無料記事のルール数5/6の食い違い、オーナー記入部分の照合経路の誤り、失敗3の因果の断定、推定の明記漏れ）と F11 minor"}
 {"at":"2026-10-23T15:37:16+09:00","actor":"ai","action":"transition","article_id":"ai-team-buildlog-01","from":"needs_revision","to":"drafting","reason":"qa 指摘の修正"}
 {"at":"2026-10-23T15:38:58+09:00","actor":"ai","action":"transition","article_id":"ai-team-buildlog-01","from":"drafting","to":"qa","reason":"qa 指摘の修正完了、再チェック"}
+{"at":"2026-10-23T15:40:56+09:00","actor":"ai","action":"transition","article_id":"ai-team-buildlog-01","from":"qa","to":"awaiting_approval","reason":"再チェック ready_for_approval（F1〜F11 pass）"}
