@@ -1,7 +1,7 @@
 # 進捗と残課題
 
 - 最終更新: 2026-10-23（JST）
-- 現在のフェーズ: **フェーズ4 進行中（ai-team-buildlog-01 を qa に遷移、quality-analyst がチェック中）**
+- 現在のフェーズ: **フェーズ4 進行中（ai-team-buildlog-01 が承認待ち。オーナーの承認・手動投稿待ち）**
 - 作業ブランチ: `claude/upbeat-cerf-5k2jv2`
 
 ## 環境確認結果（2026-10-23、クラウド実行環境）
@@ -136,4 +136,5 @@
 ## 次の一手
 1. 以後、プッシュのたびに GitHub の Actions タブで CI（check）が緑か確認する（赤なら Claude Code に「CI が失敗したので直して」と依頼）
 2. フェーズ3の続き（テーマ候補調査）:
-> docs/progress.md を読んで、ai-team-buildlog-01 を qa に進めて quality-analyst で品質チェックして
+（オーナーが承認・投稿・公開記録を終えたら）
+> docs/progress.md を読んで、フェーズ5（公開後の実績記録と、無料記事から有料記事へのリンクの仕組み）を始めて

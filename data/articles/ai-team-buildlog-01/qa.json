@@ -1,74 +1,74 @@
 {
   "article_id": "ai-team-buildlog-01",
-  "checked_at": "2026-10-23T15:33:00+09:00",
+  "checked_at": "2026-10-23T15:39:00+09:00",
   "checked_by": "quality-analyst",
   "results": [
     {
       "id": "F1",
       "status": "pass",
       "severity": null,
-      "note": "数値・事実主張には概ね出典（CLAUDE.md / docs/*.md / .claude/* / src/* / package.json）が付いている。オーナー記入部分（筆者紹介・感想）は本人の体験として出典なしで可。軽微: free.md L4 の出典「docs/progress.md の『環境確認結果』」には Windows / PowerShell の記録がない（実際は同ファイル『オーナーに確認してほしいこと』L68）。出典の節名を直すことを推奨（minor）。"
+      "note": "前回 pass。前回の minor（free.md L4 の出典節名）は解消: free.md L4 が「環境確認結果」「オーナーに確認してほしいこと」の2節を併記。docs/progress.md L7-16『環境確認結果（クラウド実行環境）』に Claude Code 2.1.309（L15）、L66-68『オーナーに確認してほしいこと』に Windows / PowerShell（L68）があり、2つの環境と2つの節が対応している。変更箇所に新たな出典なし主張はない。"
     },
     {
       "id": "F2",
-      "status": "fail",
-      "severity": "critical",
-      "note": "出典と記述の不一致あり。[1] free.md L56「次の5つを最優先のルールとして書きました（出典: CLAUDE.md）」→ CLAUDE.md『絶対に守るルール』は6項目（6.既存ファイルを勝手に削除・全面上書きしない）。paid.md L49 も「次の6項目」と書いており無料・有料で矛盾。H1・L54 の『5つの安全ルール』も含め、『6つのうち5つを紹介』等に直すか6つ目を加える。[2] free.md L145（オーナー記入）「許可したあとは、公式ページを直接開いて数値を照合できるようになりました」→ docs/progress.md L106「ネットワーク許可後、curl では note.com を取得できるが、Subagent の WebFetch ツールは DNS エラー。直接取得が必要な照合は進行役が curl で行う」、L102-103 直接取得したのは 027〜029 の3件のみで、data/market/2026-10-23-027〜029.json はいずれも個人クリエイターの note 記事ページ（価格・スキ数の照合）で『公式ページ』ではない。公式ヘルプ（help-note.com）由来の 001〜009 はすべて method: web_search で、手数料の数値照合はオーナーがブラウザで実施（progress L98）。修正案:『許可したあとは、進行役（メインの会話）が note の記事ページを直接開いて価格などを照合できるようになりました（調査担当の Web取得ツールはエラーのまま。公式ヘルプの手数料は自分のブラウザで確認）』。[3] paid.md L392 失敗3の原因「Bash を持たないため、現在時刻を調べる手段がなかった。再発防止のルールに『Bash がない Subagent など』と書いたのはこのため」→ 一次資料で言えるのは、data/market/2026-10-23-001.json notes『実行環境で現在時刻を取得できなかったため 00:00 を仮置き』、.claude/agents/market-researcher.md の tools に Bash がないこと、source-recording SKILL.md L37 の文言まで。両者の因果や規則の意図は progress.md に記録がない（major 相当）。修正案:『調査担当は現在時刻を取得できず 00:00 を仮置きしていた（記録: 市場データ 001 の notes）。調査担当には Bash を持たせておらず、時刻を調べる手段がなかったと考えられる』。出典に data/market/2026-10-23-001.json を追加。[4] paid.md L393「実際の作業時間帯（13:54〜13:58 JST）」→ 001 の notes では『実行開始・終了時刻からの推定』。『推定』と明記（minor 相当）。照合して一致したもの: 失敗1の20通り（progress L59）、失敗3の13:58（L94）、失敗4の最大14:55→14:43（L104、010 notes も一致）、失敗5の15:10→15:06・5分以上先・230件（L118、src/app/integrity.ts L23-26 の 5*60_000）、テスト230件（L118が最新記録）、CI の Ubuntu Node22/24・Windows Node24（.github/workflows/check.yml、progress L74/L77）、Claude Code 2.1.309・Node v22.22.0（L15/L13）、Windows Node v24.19.0（L68）、deny/ask・hooks の引用（.claude/settings.json と一字一句一致。deny は L12 の後に Edit 6行・Write 7行を省略し注記あり、件数の説明も正しい）、approval-guard.mjs の L15-18・L198-213 引用一致、判定表は evaluateBash/evaluateWrite と一致、state-machine.ts L117-125・hash.ts L24-34・human-guard.ts L12-21・editor-writer.md L1-5 の引用一致、approve の記事ID再入力・publish:record の yes（src/cli/index.ts L161/L175）、check の順序（package.json L14）、エラーの『探した場所』（src/storage/repository.ts L128）、各担当の tools と Skill 5種、ADR-006/007、requirements §6・FR-5.3、architecture §1 引用。"
+      "status": "pass",
+      "severity": null,
+      "note": "前回指摘4点はすべて解消。[F2-1 解消] free.md H1『6つの安全ルール』、L54『最初に決めた6つのルール』、L56『次の6つ』、L82-84 にルール6『既存ファイルを勝手に削除・全面上書きしない／変更は、差分が分かる形で行う』を追加。CLAUDE.md『絶対に守るルール』6.『既存ファイルを勝手に削除・全面上書きしない。変更は差分が分かる形で行う。』と一致し、paid.md L49『6項目』・L51-58 の引用（CLAUDE.md と一字一句一致）とも矛盾しない。[F2-2 解消] free.md L149 から『公式ページ』を削除し『note の記事ページを直接開いて、価格などの数値を照合できるようになりました』に変更。progress L99/L102-103/L106 と data/market/2026-10-23-027〜029.json（method: web_fetch、source_url はいずれも note.com の個人記事ページ、価格の照合は L103）と整合し、事実の誤りはなくなった。主語が省略されている点は F11 で minor として記録。[F2-3 解消] paid.md L393 を『調査担当は現在時刻を取得できず、00:00 を仮置きしていた（記録: 市場データ 001 の notes）。…時刻を調べる手段がなかったと考えられます』に変更。前半は data/market/2026-10-23-001.json notes『実行環境で現在時刻を取得できなかったため 00:00 を仮置き』と一致、後半は推量表現になり因果の断定はない。.claude/agents/market-researcher.md に Bash がないことは前回確認済み。L403 の出典に data/market/2026-10-23-001.json、market-researcher.md、source-recording/SKILL.md を追加済み。L398-400 のルール引用は SKILL.md L37-39 と一字一句一致。[F2-4 解消] paid.md L394『13:54〜13:58 JST。実行開始・終了時刻からの推定』と推定を明記（001 notes と一致）。その他、前回照合済みの数値（20通り、14:55→14:43、15:10→15:06、5分以上先、230件、CI、各バージョン、各コード引用）は変更箇所外で影響なし。"
     },
     {
       "id": "F3",
       "status": "pass",
       "severity": null,
-      "note": "他者の購入数・売上への言及なし。販売数は原則非公開という前提の記述（free.md L62）は requirements.md §6 と一致。自社の売上は『まだゼロ』（free.md L17）『まだありません』（paid.md L522）と明記。"
+      "note": "前回 pass、変更箇所に影響なし。free.md L149 の修正後も他者の購入数・売上への言及はない（『価格などの数値』は公開表示値）。"
     },
     {
       "id": "F4",
       "status": "pass",
       "severity": null,
-      "note": "6つの失敗はすべて docs/progress.md に記録あり（L59, L56, L94, L104, L118, L70）。架空の口コミ・実績なし。paid.md L445『エラーを Claude に見せたところ指摘されて気づいた』はオーナー本人の体験で記録はないが、progress L70 と矛盾しない。free.md L145 の不正確さは事実の誤記述として F2 で扱った。"
+      "note": "前回 pass、変更箇所に影響なし。追加されたルール6は CLAUDE.md の実在ルール。失敗3の原因は推量表現に改められ、架空の経緯はない。"
     },
     {
       "id": "F5",
       "status": "pass",
       "severity": null,
-      "note": "free.md / paid.md に『【要オーナー記入】』は残っていない（Grep で 0 件）。"
+      "note": "free.md / paid.md に『【要オーナー記入】』は残っていない（Grep で 0 件、再確認）。"
     },
     {
       "id": "F6",
       "status": "pass",
       "severity": null,
-      "note": "『必ず』『誰でも』『稼げる』『確実』等の収益保証表現なし。paid.md L25『事故が起きないと保証するものではありません』、free.md L17・paid.md L522 で売上ゼロを明記。『簡単に作れる』（free.md L21, paid.md L43）はアプリ開発に関する筆者の感想で収益の誇張ではない。"
+      "note": "前回 pass。再 Grep で『必ず』『確実』『誰でも』『稼げる』は本文に 0 件。free.md L149 の修正は表現を弱める方向で、誇大表現の追加なし。paid.md L63『承認系のコマンドについて』も CLAUDE.md の文脈（オーナー専用コマンド approve / publish:record / article:archive の直後の一文）の要約として言い過ぎではない（F11 参照）。"
     },
     {
       "id": "F7",
       "status": "pass",
       "severity": null,
-      "note": "引用はすべて筆者自身のリポジトリのファイルで、各引用に出典を明記。第三者の文章の複製なし。Claude Code の一般仕様に関する記述（Subagent・CLAUDE.md・フック・exit 2）は『このチームの環境では』『バージョンによって変わる可能性』等の留保付きで、リポジトリで確認できる範囲（ADR-001、progress L43/L64、human-guard.ts のコメント）を超える断定はない。"
+      "note": "前回 pass、変更箇所に影響なし。追加・変更された引用（CLAUDE.md ルール6の要約、CLAUDE.md の一文、settings.json、demo-setup.ts の出力）はすべて筆者自身のリポジトリ由来で出典明記。"
     },
     {
       "id": "F8",
       "status": "pass",
       "severity": null,
-      "note": "paid.md の <!-- paywall --> は L45 の1つだけ（Grep で確認）。free.md にはなし。"
+      "note": "paid.md の <!-- paywall --> は L45 の1つだけ（Grep で再確認）。free.md にはなし。"
     },
     {
       "id": "F9",
       "status": "pass",
       "severity": null,
-      "note": "paid.md L1 の H1 は meta.json の title と完全一致。価格は meta.json price_jpy 980 と paid.md L3・free.md L157 の『980円』が一致。free.md の H1 は無料記事用の別タイトル（progress L125 の方針どおり）。"
+      "note": "paid.md L1 の H1 は meta.json title と完全一致（meta.json の title は変更なし）。価格 980円は meta.json price_jpy・paid.md L3・free.md L161 で一致。free.md H1 は無料記事用の別タイトル（『6つの安全ルール』への変更は本文の数と整合）。"
     },
     {
       "id": "F10",
       "status": "pass",
       "severity": null,
-      "note": "GitHub アカウント名、リポジトリURL、ブランチ名、メールアドレス、セッションURL、ローカルパス（/home/…, C:\\Users\\…）、本名なし。URL は paid.md L436 のダミー https://note.com/demo/n/n0000000000（scripts/demo-setup.ts L84 由来）のみ。練習用フォルダの場所は伏せてある。Claude Code・Node.js のバージョン、Windows/PowerShell、Pro プランの記載はオーナー判断（progress L129）で残すもの。"
+      "note": "前回 pass。変更箇所の再確認: paid.md L432-440 の表示例は記事ID demo-001 とダミーURL https://note.com/demo/n/n0000000000（scripts/demo-setup.ts L83-84 由来）のみで、練習用フォルダの場所は『<練習用フォルダの場所>』に伏せてある。free.md L4 の節名追加にもパス・アカウント名・URL は含まれない。"
     },
     {
       "id": "F11",
-      "status": "fail",
-      "severity": "minor",
-      "note": "[1] paid.md L102 省略の注記を JSON 配列内の文字列『\"（Edit と Write も…省略）\"』として置いているため、読者がコピーすると無効なルールが混ざる。ブロック外に注記するか、Edit/Write の13行を省略せず載せる。[2] paid.md L63 のかぎかっこ内『承認系のコマンドがブロックされたら回避策を探さず、オーナーに依頼すること』は CLAUDE.md の実文『ブロックされたら回避策を探さず、オーナーに依頼すること。』に語を足した形。引用符を外して要約にするか実文どおりにする。[3] paid.md L432-439 の demo:setup 表示例は、実際の出力（scripts/demo-setup.ts L81-86）では記事IDが demo-001 と表示されるが <記事ID> に置き換えている。『記事ID も置き換えています』と注記するか demo-001 のままにする。[4] free.md L4 の出典節名（F1 参照）。"
+      "status": "pass",
+      "severity": null,
+      "note": "前回指摘はすべて解消。[1] paid.md L91-111 の deny ブロックは .claude/settings.json L3-34 から L13-25 を除いたものと一字一句一致し、ブロック内に注記文字列はない。省略注記は L113 のブロック外にあり、内容『"Edit(./.env)" の直後にある、Read と同じ .env 系を対象にした Edit 6行・Write 7行の計13行は省略』も実ファイル（Edit L13-18 の6行、Write L19-25 の7行）と一致。ask・hooks の引用（L128-137、L158-173）も settings.json L35-42・L44-57 と一致。[2] paid.md L63 はかぎかっこ内が CLAUDE.md の実文『ブロックされたら回避策を探さず、オーナーに依頼すること。』と一字一句一致し、『承認系のコマンドについて』はかぎかっこの外の要約。CLAUDE.md ではこの一文が『オーナー専用: npm run approve / npm run publish:record / npm run article:archive … approval-guard.mjs でもブロックされる』に続くため、要約として言い過ぎではない（article:archive は厳密には承認ではないが『承認系』の範囲として許容）。[3] paid.md L436-437 は demo-001 のままで scripts/demo-setup.ts L81-86 の出力と一致（フォルダの場所のみ伏せ字で、その旨 L430 に注記）。[4] free.md L4 の節名は F1 のとおり解消。残る軽微な点（任意・公開を止めるものではない）: free.md L149『note の記事ページを直接開いて…照合できるようになりました』は主語がなく、直前の『調査は AI が自動でやってくれる』から調査担当（Subagent）が直接取得できるようになったと読める余地がある。実際に直接取得できるのは進行役の curl のみで、Subagent の WebFetch は DNS エラーのまま（progress L99/L106）。『進行役（メインの会話）が』を補うと正確になる（オーナー記入部分のため、修正するかはオーナー判断）。"
     }
   ],
-  "verdict": "needs_revision"
+  "verdict": "ready_for_approval"
 }
