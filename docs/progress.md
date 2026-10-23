@@ -1,7 +1,7 @@
 # 進捗と残課題
 
 - 最終更新: 2026-10-23（JST）
-- 現在のフェーズ: **フェーズ4 進行中（ai-team-buildlog-01 を drafting に遷移、editor-writer が執筆中。free.md/paid.md は書きかけ・未確認）**
+- 現在のフェーズ: **フェーズ4 進行中（ai-team-buildlog-01 下書き完了、オーナーの記入待ち）**
 - 作業ブランチ: `claude/upbeat-cerf-5k2jv2`
 
 ## 環境確認結果（2026-10-23、クラウド実行環境）
@@ -120,10 +120,19 @@
 - [ ] 推奨テーマの追加調査（market-researcher＋進行役の curl 照合）: Claude Code の CLAUDE.md・Subagent・フックを扱う有料記事の件数・価格・スキ数、013 の照合
 - [ ] 未確認事項: 一般会員とプレミアム会員で手数料率に違いがあるか、利用規約本文の自動化に関する条項（2026-10-23-004, 008 の notes 参照）
 
+## フェーズ4（進行中）
+- [x] ai-team-buildlog-01 の下書き作成（2026-10-23、editor-writer）: free.md 約1.3万字（本文約5,500字）、paid.md 約3.5万字（本文約17,000字、paywall は1つ）
+  - タイトル（meta.json に設定）: 有料第1案「Claude Code の AI社員に「承認・公開」をさせない設計図: CLAUDE.md・settings.json・PreToolUse フックの実例と6つの失敗の直し方」。無料記事の H1 は「Claude Code で「AI社員チーム」を作るときに最初に決めた5つの安全ルールと、実際に起きた6つの失敗」
+  - 進行役の確認: 匿名性（アカウント名・URL・パス・ブランチ名なし）、禁止表現なし、paywall 1つ、paid.md 手順4のフック確認コマンドを実行し記事の記述どおり（exit 2 / 0）
+  - 執筆担当の指摘で architecture.md の不一致（「4層」→5層、フックは監査ログに記録しない、quality-analyst に Bash なし）を修正
+- [ ] **オーナー作業**: `【要オーナー記入】` 8か所を埋める（free.md: 筆者の立場・作った理由・失敗6の気持ち・使ってみた感想・有料記事リンク（公開後）／paid.md: 筆者紹介・失敗6で迷った点・次の一歩）
+- [ ] **オーナー判断**: (1) 末尾の「下書きはAI社員が作成」という開示文を残すか (2) Claude Code・Node.js のバージョン、Windows/PowerShell 利用の記載を載せてよいか
+- [ ] その後: drafting → qa に遷移し、quality-analyst が fact-integrity-check（F5 は記入完了が条件。有料記事リンクは公開後に入れるため扱いを決める）
+
 ## 未実施・保留
 - Web 調査（フェーズ3）
 
 ## 次の一手
 1. 以後、プッシュのたびに GitHub の Actions タブで CI（check）が緑か確認する（赤なら Claude Code に「CI が失敗したので直して」と依頼）
 2. フェーズ3の続き（テーマ候補調査）:
-> docs/progress.md を読んで、フェーズ4として ai-team-buildlog-01 の無料記事と有料記事の下書きを editor-writer で作って
+> （オーナーが【要オーナー記入】を埋めた後）docs/progress.md を読んで、ai-team-buildlog-01 を qa に進めて quality-analyst で品質チェックして

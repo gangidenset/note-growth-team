@@ -47,7 +47,7 @@
 | `market-researcher.md` | テーマ候補発見、競合観測、出典記録 | `data/market/` | Read, Grep, Glob, Write, Edit, WebSearch, WebFetch |
 | `marketing-strategist.md` | テーマ選定、価格・導線設計、売上シナリオ | `data/themes/` | Read, Grep, Glob, Write, Edit |
 | `editor-writer.md` | 無料・有料記事の執筆と推敲 | `data/articles/<id>/` | Read, Grep, Glob, Write, Edit |
-| `quality-analyst.md` | 公開前チェック、捏造検知、公開後の実績分析 | `data/articles/<id>/qa.json`, `reports/` | Read, Grep, Glob, Write, Bash（テスト・検証コマンド用、フェーズ2で付与） |
+| `quality-analyst.md` | 公開前チェック、捏造検知、公開後の実績分析 | `data/articles/<id>/qa.json`, `reports/` | Read, Grep, Glob, Write（Bash は未付与。検証コマンドは進行役が実行） |
 
 - どの Subagent も **承認・公開・削除・課金・外部送信の権限を持たない**。
 - Bash を与えるのは quality-analyst のみ（検証コマンド実行用）。
@@ -116,12 +116,12 @@ idea → researching → planning → drafting → qa ──▶ awaiting_approva
 
 ## 4. 承認ゲートの多層防御
 
-単一の仕組みに頼らず、4層で「AIによる承認・公開」を防ぐ。
+単一の仕組みに頼らず、5層で「AIによる承認・公開」を防ぐ。
 
 1. **ドメイン層（CLI）**: `approved`/`published` への遷移は `article:transition` では拒否。専用コマンドのみが扱う。
 2. **対話確認**: `approve` は TTY（人が操作する端末）でのみ動作し、記事ID の再入力を求める。非対話実行（Claude Code の Bash など）では失敗する。
 3. **Claude Code 設定**: `.claude/settings.json` の `permissions.deny` で `npm run approve` / `npm run publish:record` を禁止。`data/approvals/**` への書き込みも禁止。
-4. **フック（フェーズ2）**: PreToolUse フックで上記コマンドや承認ファイル編集を検知してブロックし、監査ログに記録。
+4. **フック（フェーズ2）**: PreToolUse フックで上記コマンドや承認ファイル編集を検知してブロックし、理由を Claude Code の画面に表示する（監査ログには記録しない）。
 5. **整合性検証**: `npm run check` が「承認記録のハッシュと本文が一致しない `published` 記事」や「承認記録のない `approved` 記事」を検出してテスト失敗にする。
 
 ## 5. 秘密情報の扱い
