@@ -1,0 +1,27 @@
+{
+  "id": "flutter-windows-stumbles",
+  "title": "Windows で Flutter アプリを作ってストア公開するまでのつまずき集（バージョン明記・対処手順つき）",
+  "genre": "app_dev",
+  "status": "candidate",
+  "evidence_ids": [
+    "2026-10-23-011"
+  ],
+  "scores": {
+    "demand": 2,
+    "competition": 3,
+    "owner_strength": 3,
+    "production_cost": 3
+  },
+  "rationale": "需要: Windows 環境の Flutter/Android 開発の環境構築のつまずきを扱う有料ページ（350円）が確認できたが1件のみで、スキ数・公開日も不明（2026-10-23-011）。需要の証拠は弱いため2。競合: 同じ検索で有料と確認できたのはこの1件で、リリース手順系は無料記事が多数（2026-10-23-011 notes）。有料の競合は少ないが無料記事との差を出す必要があるため3。オーナーの強み: オーナーは Windows（PowerShell）で作業している（docs/progress.md の動作確認記録）ため、Windows 前提の記事は書きやすい可能性がある。Flutter の経験の有無は未確認。制作コスト: 手順を実機で再現しバージョンを明記する必要があるため3。匿名でも書けて、表現上のリスクは低い。",
+  "hypotheses": [
+    "owner_strength は仮置き。オーナー確認待ち",
+    "オーナーが Flutter を使った経験があるかは未確認（使っていなければこのテーマは不適）",
+    "無料の手順記事が多い中で「つまずきと対処」に絞れば有料でも読まれるという仮説（未検証）",
+    "2026-10-23-011 の 350円が単体記事かマガジン価格かは不明。価格500円は business-plan.md §3 の価格帯からの仮定",
+    "500円で月5万円には月100本が必要（計画値）。単体では届きにくく、記事を複数本にする前提",
+    "Flutter・Android Studio・ストア審査の仕様は変わるため、需要の持続性と記事の更新負担は未検証"
+  ],
+  "price_plan_jpy": 500,
+  "decided_by": "marketing-strategist",
+  "updated_at": "2026-10-23T14:52:00+09:00"
+}

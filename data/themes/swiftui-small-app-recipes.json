@@ -1,0 +1,26 @@
+{
+  "id": "swiftui-small-app-recipes",
+  "title": "SwiftUI で小さなアプリを作るレシピ集（1記事1機能・動作確認したバージョン明記）",
+  "genre": "app_dev",
+  "status": "candidate",
+  "evidence_ids": [
+    "2026-10-23-010"
+  ],
+  "scores": {
+    "demand": 2,
+    "competition": 3,
+    "owner_strength": 3,
+    "production_cost": 2
+  },
+  "rationale": "需要: SwiftUI の有料マガジン（1,000円・11本）が確認できたが1件のみで、スキ数・公開日は不明（2026-10-23-010、検索抜粋のみで未照合）。需要の証拠は弱いため2。競合: 有料の実例は1件しか確認しておらず、多いか少ないか判断材料が乏しいため中間の3。オーナーの強み: 未確認。制作コスト: SwiftUI は Mac と Xcode が必要で、オーナーは Windows で作業している記録がある（docs/progress.md）ため、Mac の有無によっては作れない。動作確認とバージョン明記も必要なため2。",
+  "hypotheses": [
+    "owner_strength は仮置き。オーナー確認待ち",
+    "オーナーが Mac を持っていて Swift/SwiftUI の経験がある場合のみ成立する",
+    "1記事1機能の小さなレシピ形式は単品で買いやすいという仮説（未検証）",
+    "価格500円は仮定。2026-10-23-010 のマガジン1,000円（11本）は1本あたりに直すと安く、単品500円が受け入れられるかは未検証",
+    "iOS・Xcode のバージョン更新で記事が古くなりやすい。需要の持続性は未検証"
+  ],
+  "price_plan_jpy": 500,
+  "decided_by": "marketing-strategist",
+  "updated_at": "2026-10-23T14:52:00+09:00"
+}
