@@ -1,7 +1,7 @@
 # 進捗と残課題
 
 - 最終更新: 2026-10-23（JST）
-- 現在のフェーズ: **フェーズ2 進行中（手順1〜6 完了、手順7から再開）**
+- 現在のフェーズ: **フェーズ2 進行中（手順1〜9 完了、残りは手順10 CI のみ）**
 - 作業ブランチ: `claude/upbeat-cerf-5k2jv2`
 
 ## 環境確認結果（2026-10-23、クラウド実行環境）
@@ -36,6 +36,14 @@
   - npm scripts: `article:new` / `article:transition` / `article:status` / `market:validate` / `approve` / `publish:record` / `article:archive`
   - オーナー専用コマンドは「Claude Code の中（環境変数 CLAUDECODE）」「非TTY」なら拒否し、記事IDの再入力（公開記録は yes）で確認
 - [x] テスト追加: hash / repository / articles（統合）/ cli（別プロセス実行）。`npm run check` で計 141 件すべて成功
+- [x] 手順7: `src/security/secret-scan.ts` + `scripts/secret-scan.ts`（`npm run secret-scan`）。Git 追跡＋未追跡（.gitignore 対象外）のファイルを検査。値は表示せず「ファイル:行: 種類」のみ。`.env` 等はファイル名だけで報告し中身は読まない
+- [x] 手順8: `.claude/hooks/approval-guard.mjs`（PreToolUse フック、依存なし）を `.claude/settings.json` に登録
+  - deny: オーナー専用3コマンド（`npm run -s approve`、`bash -c`、`npx tsx src/cli/index.ts approve` 等の書き方も含む）、`data/approvals/` への書き込み（リダイレクト・cp・rm・sed -i・Write/Edit）、`.env` 等への書き込み
+  - ask: `.claude/settings.json` と `.claude/hooks/` の変更（オーナーに確認ダイアログ）
+  - 入力が壊れていたら安全側（拒否）。2026-10-23 にこのセッションで実際にブロックされることを確認済み
+- [x] 手順9: `src/app/integrity.ts`（`npm run data:check`）。状態と履歴の不一致（status の直接書き換え）、オーナー以外による承認系遷移の記録、承認記録の欠落・ハッシュ不一致、孤立した承認記録、不正な市場データ・テーマ、壊れた監査ログを検出
+  - `npm run check` = typecheck → test → secret-scan → data:check
+- [x] テスト追加: secret-scan / approval-guard（別プロセス実行含む）/ integrity。計 226 件すべて成功
 
 ## 残課題
 ### オーナー確認が必要
@@ -48,17 +56,18 @@
 - `.claude/settings.json` の `Read(./.env.*)` 等が `.env.example` にも一致していた件 → deny を `.env`, `.env.local`, `.env.*.local`, `.env.development`, `.env.production`, `.env.staging`, `.env.test` に限定し、`Write` も同じ範囲で禁止。`.env.example` は Claude Code から読み書き可能になった。
 - 注意: 上記以外の名前の秘密ファイル（例 `.env.mine`）は deny 対象外。秘密ファイルは `.env` か `.env.local` を使うこと（Gitには `.gitignore` の `.env.*` で入らない）。
 
-### 既知の問題（手順8で対応）
-- `.claude/settings.json` の deny `Bash(npm run approve:*)` は前方一致のため、`npm run -s approve ...` や `cd x && npm run approve ...` のような書き方には効かない（2026-10-23 の動作確認で判明。CLI 側の CLAUDECODE/TTY チェックで拒否されたため実害なし）。手順8のフックでコマンド文字列全体を検査して塞ぐ。
+- `settings.json` の deny `Bash(npm run approve:*)` が前方一致で `npm run -s approve` 等をすり抜けた件 → 手順8のフックで解決（テストで20通りの書き方を確認）。
+
+### 既知の制限（許容しているもの）
+- フックは簡易的なシェル解析のため、`python3 -c` 経由など想定外の書き方は検出できない。その場合も CLI 側の CLAUDECODE/TTY チェックと `data:check` が後段で止める（多層防御）。
+- `npm test -- -t approve` のように引数に単独の `approve` を含むコマンドは誤って拒否される（実害が小さいため許容）。
+- フックがブロックした記録は監査ログには残していない（Claude Code の画面上に理由が表示される）。
 
 ### オーナーに確認してほしいこと
 - [ ] 自分のターミナルで `approve` が対話確認つきで動くこと（Claude Code からは規則上実行できないため、承認成功の経路はオーナーの手元でのみ確認可能。自動テストではアプリ層の承認処理を検証済み）
 
 ### AI 側（フェーズ2の残り）
-- [ ] 手順7: `scripts/secret-scan.ts`（一致した値は表示せず、ファイル名と行番号だけ出す）
-- [ ] 手順8: PreToolUse フックによる承認ガード（上記の前方一致の抜け道も対象）
-- [ ] 手順9: `npm run check` に secret-scan・データ整合性を追加
-- [ ] 手順10: GitHub Actions（CI）
+- [ ] 手順10: GitHub Actions（CI）— push 時に `npm ci && npm run check`
 
 ## 実装メモ（再開時の参考）
 - 状態機械は `checkTransition(from, to, ctx)` で判定のみ行う。ファイルの存在確認・qa.json 読み込み・ハッシュ照合は CLI 側（手順5〜6）で `TransitionContext` に詰めて渡す。
@@ -74,4 +83,7 @@
 
 ## 次の一手
 Claude Code に次のように依頼する:
-> docs/progress.md を読んで、フェーズ2の手順7〜9（秘密情報スキャン、承認ガードのフック、npm run check の拡張）とそのテストを実装して
+> docs/progress.md を読んで、フェーズ2の手順10（GitHub Actions で npm run check を実行する CI）を実装して
+
+その後はフェーズ3（市場調査の実働化）へ:
+> docs/progress.md を読んで、フェーズ3を始めて。まず note の手数料と公式APIの有無を公式情報で確認して記録して

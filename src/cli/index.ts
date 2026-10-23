@@ -16,6 +16,7 @@ import {
   transitionArticle,
   validateMarket,
 } from "../app/articles.js";
+import { checkIntegrity } from "../app/integrity.js";
 import { ArticleState } from "../domain/schemas.js";
 import { DomainError, Repository } from "../storage/repository.js";
 import { checkHumanTerminal, currentTerminal } from "./human-guard.js";
@@ -27,6 +28,7 @@ AI・オーナー共通:
   article:transition -- <記事ID> <遷移先> [--reason <理由>]
   article:status
   market:validate
+  data:check
 
 オーナー専用（自分のターミナルで実行。Claude Code からは実行不可）:
   approve -- <記事ID> [--note <メモ>]
@@ -135,6 +137,17 @@ export async function main(argv: string[]): Promise<number> {
         for (const e of bad.errors) console.log(`    - ${e}`);
       }
       return summary.invalid.length === 0 ? 0 : 1;
+    }
+
+    case "data:check": {
+      const issues = checkIntegrity(repo);
+      if (issues.length === 0) {
+        console.log("データ整合性チェック: 問題は見つかりませんでした");
+        return 0;
+      }
+      console.log(`データ整合性チェック: ${issues.length} 件の問題があります`);
+      for (const i of issues) console.log(`✗ ${i.target}: ${i.message}`);
+      return 1;
     }
 
     case "approve": {

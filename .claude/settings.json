@@ -40,5 +40,19 @@
       "Bash(wget:*)",
       "Bash(npm install:*)"
     ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Write|Edit|MultiEdit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/approval-guard.mjs\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
   }
 }

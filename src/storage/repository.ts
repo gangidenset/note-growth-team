@@ -190,6 +190,36 @@ export class Repository {
     return results;
   }
 
+  /** data/themes/*.json をすべて検証して返す */
+  loadThemes(): { file: string; theme: ThemeRecord | null; errors: string[] }[] {
+    const dir = this.dataPath("themes");
+    if (!existsSync(dir)) return [];
+    return readdirSync(dir)
+      .filter((f) => f.endsWith(".json"))
+      .sort()
+      .map((file) => {
+        try {
+          const theme = this.readJson(join(dir, file), ThemeRecord, "テーマ記録");
+          if (theme && `${theme.id}.json` !== file) {
+            return { file, theme: null, errors: [`id（${theme.id}）とファイル名が一致しません`] };
+          }
+          return { file, theme, errors: [] };
+        } catch (e) {
+          return { file, theme: null, errors: e instanceof DomainError ? e.messages : [String(e)] };
+        }
+      });
+  }
+
+  /** data/approvals/ にある承認記録の記事ID一覧 */
+  listApprovalIds(): string[] {
+    const dir = this.dataPath("approvals");
+    if (!existsSync(dir)) return [];
+    return readdirSync(dir)
+      .filter((f) => f.endsWith(".json"))
+      .map((f) => f.slice(0, -".json".length))
+      .sort();
+  }
+
   // ---------- 監査ログ ----------
 
   private auditPath(): string {
