@@ -36,10 +36,11 @@
 - [ ] 設計（requirements / architecture / business-plan）のレビュー
 - [ ] 予算内のサブスクリプションプランを公式料金ページで確認して契約（オーナー作業）
 - [ ] note 手数料の公式ヘルプでの確認（business-plan.md §2）
-- [ ] `.claude/settings.json` の deny 範囲の修正可否（下記「既知の問題」）
+- [x] `.claude/settings.json` の deny 範囲を修正（2026-10-23 オーナー了承）
 
-### 既知の問題
-- `.claude/settings.json` の `Read(./.env.*)` / `Edit(./.env.*)` が `.env.example` にも一致し、Claude Code が `.env.example` を読み書きできない（予算値はオーナーが手動で修正済み）。今後 `.env.example` に変数を追加するときはオーナー作業になる。修正案: deny を `.env`, `.env.local`, `.env.*.local`, `.env.production` など実ファイル名に限定する。
+### 解決済みの問題
+- `.claude/settings.json` の `Read(./.env.*)` 等が `.env.example` にも一致していた件 → deny を `.env`, `.env.local`, `.env.*.local`, `.env.development`, `.env.production`, `.env.staging`, `.env.test` に限定し、`Write` も同じ範囲で禁止。`.env.example` は Claude Code から読み書き可能になった。
+- 注意: 上記以外の名前の秘密ファイル（例 `.env.mine`）は deny 対象外。秘密ファイルは `.env` か `.env.local` を使うこと（Gitには `.gitignore` の `.env.*` で入らない）。
 
 ### AI 側（フェーズ2の残り）
 - [ ] 手順4: `src/domain/hash.ts`（本文の正規化と SHA-256）
